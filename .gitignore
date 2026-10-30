@@ -7,3 +7,10 @@ dist/
 !.env.example
 *.tsbuildinfo
 .DS_Store
+
+# Impeccable: keep shared config/design artifacts tracked; ignore local/runtime data.
+/.impeccable/
+!/.impeccable/
+/.impeccable/*
+!/.impeccable/config.json
+!/.impeccable/design.json

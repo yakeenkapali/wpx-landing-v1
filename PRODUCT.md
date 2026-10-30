@@ -1,65 +1,62 @@
-# WorkPlanX Website — Product Brief
+# Product
 
-This is a starter brief based on the supplied WorkPlanX business context and website outline. Confirmed statements below are sourced from `docs/02_business_context.md`; unresolved details remain marked `TODO`.
+<!-- impeccable:product-schema 1 -->
 
-## Product overview
+## Platform
 
-**Confirmed:** WorkPlanX is an end-to-end operations and billing platform for labour-based, site-delivered services, with a specialist waste and resource-recovery core. It supports a project lifecycle spanning workforce, daily operations, reporting, waste management, payroll, invoicing, and customer access.
+web
 
-**TODO:** Approved short product description and any wording restrictions.
+## Users
 
-## Target audience
+Primary customers are businesses managing projects, workforces, field operations, and related administration, especially construction and other project-based businesses. Buyers and evaluators include owners, operations managers, and finance leads. Day-to-day users include administrators, managers, supervisors, office and finance staff, estimators, field employees and drivers, subcontractors, and customers using the customer portal.
 
-**Confirmed:** Businesses managing projects, workforces, field operations, and related administration, especially construction and project-based businesses. Buyers and evaluators include owners, operations managers, and finance leads. Users include office and field teams, subcontractors, and customers using the portal.
+## Product Purpose
 
-**TODO:** Priority industries, company size, geography, and ideal-customer criteria.
+WorkPlanX is an end-to-end operations and billing platform for labour-based, site-delivered services, with a specialist waste and resource-recovery core. It connects the project lifecycle from workforce and daily operations through reporting, waste management, payroll, invoicing, and customer access. Its purpose is to improve coordination and visibility and streamline workflows across project and field operations.
 
-## Customer problems
+## Positioning
 
-**Confirmed:** Difficulty understanding job profitability; slow or inaccurate payroll; late invoices and missed variations; fragmented finance and operations; limited client visibility; and the need to coordinate project, workforce, and waste information.
+WorkPlanX brings operational work and billing workflows together for labour-based, site-delivered services. Its specialist waste and resource-recovery capabilities are built into the operations flow. Hours and work captured in the field can support downstream reporting, payroll, billing, and waste reporting without re-keying. Xero remains the accounting ledger; WorkPlanX manages operations and synchronizes with Xero.
 
-**TODO:** Customer research, approved problem wording, and relative priority.
+## Operating Context
 
-## Value proposition
+Businesses configure workspaces for branches, entities, or regions, with separate people, clients, rates, numbering, and settings. Teams register projects, plan tasks and variations, roster crews and vehicles to sites, record work through daily reports, dockets, and weigh tickets, approve timesheets, run payroll, prepare claims and invoices, and share relevant project information with clients through a permissioned portal. Work happens across the web-based Admin Portal, a field Mobile App, and the Customer Portal.
 
-**Draft from supplied context:** One platform to manage the project lifecycle, from workforce and daily operations through reporting, waste management, payroll, invoicing, and customer access.
+## Capabilities and Constraints
 
-**TODO:** Final approved value proposition and substantiation.
+- Workspaces, workforce and client management, granular permissions, and audit history.
+- Project registration, estimates, project budgets, site details, tasks, claims, and variations.
+- Crew, supervisor, driver, and fleet rostering; daily reports, dockets, weigh tickets, and configurable reports.
+- Waste and resource-recovery capture and reporting by project, customer, and workspace.
+- Employee and subcontractor timesheets, approvals, and payroll built to Australian payroll standards (Award/EA/NES).
+- Contract and docket invoicing; confirmed Xero synchronization for operational/accounting data, invoices, and payroll-related data. Xero is the only confirmed integration; do not claim others.
+- Admin Portal (web), Mobile App, and permissioned Customer Portal.
+- Pricing and demo booking are not available offerings and must not be promised.
+- Target geography is unspecified. Australian payroll standards are a product capability, not confirmation of target-market geography.
+- Contact form destination, qualified-enquiry criteria, conversion targets, and analytics events are undecided.
 
-## Key benefits
+## Brand Commitments
 
-Potential benefits supported by the business-context document (confirm wording before publication):
+- The product and company name is WorkPlanX; the website is workplanx.com.
+- Use plain business language and explain specialist terms when needed. Keep product claims within confirmed capabilities.
+- Official logo assets are `docs/brand/WORKPlanX-full-logo.svg` and `docs/brand/WORKPlanX-icon-only.svg`. Do not alter their artwork.
 
-- Coordinate project and workforce operations in one platform.
-- Capture field information for downstream reporting, payroll, and billing workflows.
-- Provide clients with permissioned access through a customer portal.
-- Manage waste and resource-recovery reporting within the operations flow.
-- Connect with Xero (the only integration confirmed in the supplied source).
+## Evidence on Hand
 
-## Website goals
+- Product capabilities and workflow: `docs/02_business_context.md`.
+- Website requirements: `docs/01_website_layout_and_structure.md`.
+- Official logo artwork: `docs/brand/WORKPlanX-full-logo.svg` and `docs/brand/WORKPlanX-icon-only.svg`.
+- Real product screenshots are stated to exist in the capability overview, but no screenshot files are included in the reviewed project materials. Verify and source approved screenshots before using them.
+- Customer logos and testimonials/case studies still need to be sourced. Do not invent or use placeholders as proof.
+- No written approved brand guide beyond the logo assets is currently present in `docs/brand/`.
 
-**Confirmed:** Introduce WorkPlanX, show the product in use, and encourage visitors to contact the company. The proposed format is a short, single-page website.
+## Product Principles
 
-## Calls to action
+- Connect the project lifecycle rather than presenting isolated administrative tools.
+- Capture field work once and make it useful to reporting, pay, billing, and resource-recovery workflows.
+- Give customers and internal teams only the access their roles require.
+- Keep product and integration claims grounded in confirmed capabilities.
 
-- **Primary (proposed):** Contact us.
-- **Secondary (proposed):** See how it works (in-page link).
-- **TODO:** Confirm login destinations and any other approved actions.
-- Pricing and demo booking are not currently available and should not be promised.
+## Accessibility & Inclusion
 
-## Product positioning
-
-**Draft from supplied context:** An operations and billing platform for labour-based, site-delivered services, differentiated by its waste and resource-recovery capabilities.
-
-**TODO:** Final positioning statement, competitive alternatives, and approved differentiators.
-
-## Conversion goals
-
-- **Primary:** Contact-form enquiries.
-- **TODO:** Define qualified-enquiry criteria, form destination, analytics events, and conversion targets.
-
-## Approval and open questions
-
-- **TODO:** Content approver and final messaging sign-off.
-- **TODO:** Confirm the contact form fields and delivery destination.
-- **TODO:** Source approved screenshots, customer logos, and testimonials; do not publish placeholders as proof.
+No product-specific accessibility standard or user accommodation requirement is established in the supplied business materials. Do not infer one; follow applicable platform and web accessibility requirements when designing or building.
