@@ -1,1 +1,93 @@
-/* Design tokens will be added from the approved brand system. */
+/*
+ * WorkPlanX design tokens.
+ * Sources: official logo blue in docs/brand/*.svg and the current
+ * project direction in design-system/workplanx/DESIGN.md.
+ * Validate undocumented palette/type choices with the brand owner.
+ */
+:root {
+  /* Colours */
+  --wpx-color-primary: #395af3;
+  --wpx-color-primary-hover: #2949d8;
+  --wpx-color-on-primary: #ffffff;
+  --wpx-color-secondary: #3b82f6;
+  --wpx-color-accent: #395af3;
+  --wpx-color-background: #ffffff;
+  --wpx-color-foreground: #0f172a;
+  --wpx-color-card: #ffffff;
+  --wpx-color-card-foreground: #0f172a;
+  --wpx-color-muted: #f8fafc;
+  --wpx-color-muted-foreground: #475569;
+  --wpx-color-border: #e2e8f0;
+  --wpx-color-destructive: #dc2626;
+  --wpx-color-on-destructive: #ffffff;
+  --wpx-color-ring: #395af3;
+
+  /* Typography */
+  --wpx-font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --wpx-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+  --wpx-text-display: 3.5rem;
+  --wpx-leading-display: 3.75rem;
+  --wpx-text-h1: 2.75rem;
+  --wpx-leading-h1: 3.125rem;
+  --wpx-text-h2: 2rem;
+  --wpx-leading-h2: 2.5rem;
+  --wpx-text-h3: 1.5rem;
+  --wpx-leading-h3: 2rem;
+  --wpx-text-h4: 1.25rem;
+  --wpx-leading-h4: 1.75rem;
+  --wpx-text-body-large: 1.125rem;
+  --wpx-leading-body-large: 1.75rem;
+  --wpx-text-body: 1rem;
+  --wpx-leading-body: 1.625rem;
+  --wpx-text-small: 0.875rem;
+  --wpx-leading-small: 1.25rem;
+  --wpx-text-caption: 0.75rem;
+  --wpx-leading-caption: 1rem;
+  --wpx-font-regular: 400;
+  --wpx-font-medium: 500;
+  --wpx-font-semibold: 600;
+  --wpx-tracking-tight: -0.02em;
+  --wpx-tracking-eyebrow: 0.08em;
+
+  /* Spacing (4px base) */
+  --wpx-space-1: 4px;
+  --wpx-space-2: 8px;
+  --wpx-space-3: 12px;
+  --wpx-space-4: 16px;
+  --wpx-space-6: 24px;
+  --wpx-space-8: 32px;
+  --wpx-space-12: 48px;
+  --wpx-space-16: 64px;
+  --wpx-space-24: 96px;
+  --wpx-space-32: 128px;
+
+  /* Border radius */
+  --wpx-radius-sm: 8px;
+  --wpx-radius-md: 12px;
+  --wpx-radius-lg: 20px;
+  --wpx-radius-full: 999px;
+
+  /* Shadows */
+  --wpx-shadow-subtle: 0 1px 2px rgb(15 23 42 / 0.06);
+  --wpx-shadow-raised: 0 8px 24px rgb(15 23 42 / 0.08);
+
+  /* Layout */
+  --wpx-content-max: 1200px;
+  --wpx-gutter: 24px;
+  --wpx-section-pad: 96px;
+  --wpx-section-pad-mobile: 64px;
+  --wpx-breakpoint-small: 480px;
+  --wpx-breakpoint-medium: 768px;
+  --wpx-breakpoint-large: 1024px;
+
+  /* Motion */
+  --wpx-duration-fast: 150ms;
+  --wpx-duration-normal: 250ms;
+  --wpx-duration-slow: 400ms;
+  --wpx-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --wpx-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --wpx-focus-ring: 0 0 0 3px #93aefb;
+}

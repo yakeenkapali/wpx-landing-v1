@@ -1,13 +1,79 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
+@theme inline {
+  /* Semantic color utilities: bg-primary, text-foreground, border-border, etc. */
+  --color-primary: var(--wpx-color-primary);
+  --color-primary-hover: var(--wpx-color-primary-hover);
+  --color-on-primary: var(--wpx-color-on-primary);
+  --color-secondary: var(--wpx-color-secondary);
+  --color-accent: var(--wpx-color-accent);
+  --color-background: var(--wpx-color-background);
+  --color-foreground: var(--wpx-color-foreground);
+  --color-card: var(--wpx-color-card);
+  --color-card-foreground: var(--wpx-color-card-foreground);
+  --color-muted: var(--wpx-color-muted);
+  --color-muted-foreground: var(--wpx-color-muted-foreground);
+  --color-border: var(--wpx-color-border);
+  --color-destructive: var(--wpx-color-destructive);
+  --color-on-destructive: var(--wpx-color-on-destructive);
+  --color-ring: var(--wpx-color-ring);
+
+  /* Font utilities: font-sans and font-mono. */
+  --font-sans: var(--wpx-font-sans);
+  --font-mono: var(--wpx-font-mono);
+
+  /* Spacing utilities: p-4, gap-6, mt-24, and related scale values. */
+  --spacing-1: var(--wpx-space-1);
+  --spacing-2: var(--wpx-space-2);
+  --spacing-3: var(--wpx-space-3);
+  --spacing-4: var(--wpx-space-4);
+  --spacing-6: var(--wpx-space-6);
+  --spacing-8: var(--wpx-space-8);
+  --spacing-12: var(--wpx-space-12);
+  --spacing-16: var(--wpx-space-16);
+  --spacing-24: var(--wpx-space-24);
+  --spacing-32: var(--wpx-space-32);
+
+  /* Typography utilities: text-display, text-body, and related line-heights. */
+  --text-display: var(--wpx-text-display);
+  --text-display--line-height: var(--wpx-leading-display);
+  --text-h1: var(--wpx-text-h1);
+  --text-h1--line-height: var(--wpx-leading-h1);
+  --text-h2: var(--wpx-text-h2);
+  --text-h2--line-height: var(--wpx-leading-h2);
+  --text-h3: var(--wpx-text-h3);
+  --text-h3--line-height: var(--wpx-leading-h3);
+  --text-h4: var(--wpx-text-h4);
+  --text-h4--line-height: var(--wpx-leading-h4);
+  --text-body-large: var(--wpx-text-body-large);
+  --text-body-large--line-height: var(--wpx-leading-body-large);
+  --text-body: var(--wpx-text-body);
+  --text-body--line-height: var(--wpx-leading-body);
+  --text-small: var(--wpx-text-small);
+  --text-small--line-height: var(--wpx-leading-small);
+  --text-caption: var(--wpx-text-caption);
+  --text-caption--line-height: var(--wpx-leading-caption);
+
+  /* Shape utilities. */
+  --radius-sm: var(--wpx-radius-sm);
+  --radius-md: var(--wpx-radius-md);
+  --radius-lg: var(--wpx-radius-lg);
+  --radius-full: var(--wpx-radius-full);
+}
+
 :root {
   color-scheme: light;
-  font-family: var(--font-sans);
-  color: var(--color-foreground);
-  background: var(--color-background);
+  font-family: var(--wpx-font-sans);
+  color: var(--wpx-color-foreground);
+  background: var(--wpx-color-background);
 }
 
 body {
   min-height: 100vh;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--wpx-focus-ring);
 }
