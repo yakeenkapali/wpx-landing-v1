@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { siteContent } from "@/content/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "WorkPlanX",
+  title: siteContent.seo.title,
+  description: siteContent.seo.description,
 };
 
 export default function RootLayout({

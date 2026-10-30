@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
+@import "./landing.css";
 
 @theme inline {
   /* Semantic color utilities: bg-primary, text-foreground, border-border, etc. */

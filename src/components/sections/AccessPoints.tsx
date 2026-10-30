@@ -1,3 +1,32 @@
-export function AccessPoints(): null {
-  return null;
+import { siteContent } from "@/content/site";
+import { ProductScreen } from "@/components/ui/ProductScreen";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+
+export function AccessPoints() {
+  const content = siteContent.accessPoints;
+
+  return (
+    <section
+      className="access-section section-pad"
+      id="access-points"
+      aria-labelledby="access-title"
+    >
+      <div className="content-width">
+        <SectionHeading id="access-title" title={content.heading} />
+        <div className="access-grid">
+          {content.cards.map((card) => (
+            <article className={`access-item access-item--${card.id}`} key={card.id}>
+              <ProductScreen image={card.image} />
+              <div className="access-item__copy">
+                <p className="access-item__audience">{card.audience}</p>
+                <h3>{card.title}</h3>
+                <p>{card.highlights}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p className="access-integration">{content.integration}</p>
+      </div>
+    </section>
+  );
 }
