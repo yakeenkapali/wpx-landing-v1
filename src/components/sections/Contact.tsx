@@ -12,6 +12,7 @@ export function Contact() {
   const [errors, setErrors] = useState<FieldErrors>({});
   const [serverError, setServerError] = useState("");
   const [serverFieldErrors, setServerFieldErrors] = useState<FieldErrors>({});
+  const [retryAvailable, setRetryAvailable] = useState(false);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -26,6 +27,9 @@ export function Contact() {
     const nextErrors: FieldErrors = {};
     for (const key of ["name", "email", "company", "message"] as const) {
       if (!submission[key]) nextErrors[key] = content.validation.required;
+      else if (submission[key].length > content.limits[key]) {
+        nextErrors[key] = content.validation.tooLong(content.limits[key]);
+      }
     }
     if (submission.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(submission.email)) {
       nextErrors.email = content.validation.invalidEmail;
@@ -35,6 +39,7 @@ export function Contact() {
     setErrors(nextErrors);
     setServerError("");
     setServerFieldErrors({});
+    setRetryAvailable(false);
     const firstInvalidField = (Object.keys(nextErrors) as Array<keyof FieldErrors>)[0];
     if (firstInvalidField) {
       document.getElementById(firstInvalidField)?.focus();
@@ -60,6 +65,7 @@ export function Contact() {
           document.getElementById(result.field)?.focus();
         } else {
           setServerError(result.delivered === false ? content.deliveryUnavailable : content.errorMessage);
+          setRetryAvailable(result.delivered !== false);
         }
         setState("error");
         return;
@@ -73,6 +79,7 @@ export function Contact() {
       form.reset();
     } catch {
       setServerError(content.errorMessage);
+      setRetryAvailable(true);
       setState("error");
     }
   }
@@ -88,9 +95,6 @@ export function Contact() {
     <section className="contact-section section-pad" id="contact" aria-labelledby="contact-title">
       <div className="content-width contact-layout">
         <div className="contact-copy">
-          <p className="contact-copy__marker" aria-hidden="true">
-            <span /> {siteContent.accessibility.brandName}
-          </p>
           <h2 id="contact-title">{content.heading}</h2>
           <p>{content.description}</p>
           <p
@@ -100,16 +104,16 @@ export function Contact() {
           >
             {content.deliveryNotice}
           </p>
-          <div className="contact-copy__rule" aria-hidden="true" />
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+        <form className="contact-form" id="contact-form" onSubmit={handleSubmit} noValidate>
           <div className="contact-form__grid">
             <Field
               id="name"
               label={content.fields.name.label}
               autoComplete={content.fields.name.autocomplete}
               error={errors.name ?? serverFieldErrors.name}
+              maxLength={content.limits.name}
               onChange={() => clearError("name")}
               required
             />
@@ -119,6 +123,7 @@ export function Contact() {
               type="email"
               autoComplete={content.fields.email.autocomplete}
               error={errors.email ?? serverFieldErrors.email}
+              maxLength={content.limits.email}
               onChange={() => clearError("email")}
               required
             />
@@ -127,6 +132,7 @@ export function Contact() {
               label={content.fields.company.label}
               autoComplete={content.fields.company.autocomplete}
               error={errors.company ?? serverFieldErrors.company}
+              maxLength={content.limits.company}
               onChange={() => clearError("company")}
               required
             />
@@ -138,6 +144,7 @@ export function Contact() {
                 autoComplete={content.fields.message.autocomplete}
                 id="message"
                 name="message"
+                maxLength={content.limits.message}
                 onChange={() => clearError("message")}
                 required
                 rows={4}
@@ -165,11 +172,19 @@ export function Contact() {
             ) : null}
             {state === "error" ? (
               <p className="form-status form-status--error" role="alert">
-                {serverError ||
-                  (Object.keys(errors).length > 0 || Object.keys(serverFieldErrors).length > 0
-                    ? content.errorMessage
-                    : content.deliveryUnavailable)}
+                {serverError || content.errorMessage}
               </p>
+            ) : null}
+            {state === "error" && retryAvailable ? (
+              <button
+                className="form-retry"
+                onClick={() =>
+                  document.querySelector<HTMLFormElement>("#contact-form")?.requestSubmit()
+                }
+                type="button"
+              >
+                {content.retryLabel}
+              </button>
             ) : null}
           </div>
         </form>
@@ -186,6 +201,7 @@ function Field({
   error,
   onChange,
   required,
+  maxLength,
 }: {
   id: "name" | "email" | "company";
   label: string;
@@ -194,6 +210,7 @@ function Field({
   error?: string;
   onChange: () => void;
   required: boolean;
+  maxLength: number;
 }) {
   return (
     <label className="form-field" htmlFor={id}>
@@ -204,6 +221,7 @@ function Field({
         autoComplete={autoComplete}
         id={id}
         name={id}
+        maxLength={maxLength}
         onChange={onChange}
         required={required}
         type={type}

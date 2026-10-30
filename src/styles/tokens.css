@@ -20,6 +20,7 @@
   --wpx-color-border: #e2e8f0;
   --wpx-color-destructive: #dc2626;
   --wpx-color-on-destructive: #ffffff;
+  --wpx-color-success: #166534;
   --wpx-color-ring: #395af3;
 
   /* Typography */
@@ -45,6 +46,12 @@
   --wpx-text-small: 0.875rem;
   --wpx-leading-small: 1.25rem;
   --wpx-text-caption: 0.75rem;
+  --wpx-text-hero: clamp(var(--wpx-text-h1), 4.1vw, var(--wpx-text-display));
+  --wpx-text-hero-tablet: clamp(var(--wpx-text-h1), 5.2vw, var(--wpx-text-display));
+  --wpx-text-hero-mobile: clamp(var(--wpx-text-h1), 9vw, var(--wpx-text-display));
+  --wpx-text-hero-narrow: clamp(var(--wpx-text-h1), 11vw, var(--wpx-text-display));
+  --wpx-text-section: clamp(var(--wpx-text-h2), 3.2vw, var(--wpx-text-h1));
+  --wpx-text-section-mobile: clamp(var(--wpx-text-h2), 7.5vw, var(--wpx-text-h1));
   --wpx-leading-caption: 1rem;
   --wpx-font-regular: 400;
   --wpx-font-medium: 500;

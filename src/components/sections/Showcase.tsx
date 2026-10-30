@@ -44,7 +44,6 @@ export function Showcase() {
         <SectionHeading
           id="showcase-title"
           title={content.heading}
-          description={content.description}
         />
 
         <div className="showcase-layout">
@@ -83,11 +82,18 @@ export function Showcase() {
               {"images" in activeTab ? (
                 <div className="showcase-panel__split-images">
                   {activeTab.images.map((image) => (
-                    <ProductScreen image={image} key={image.src} />
+                    <ProductScreen
+                      className="showcase-panel__screen"
+                      image={image}
+                      key={image.src}
+                    />
                   ))}
                 </div>
               ) : (
-                <ProductScreen image={activeTab.image} />
+                <ProductScreen
+                  className="showcase-panel__screen"
+                  image={activeTab.image}
+                />
               )}
             </div>
             <div className="showcase-panel__copy">

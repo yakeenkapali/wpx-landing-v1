@@ -24,8 +24,8 @@ export const siteContent = {
     footerNavigation: "Footer navigation",
     productTabs: "WorkPlanX product workflows",
     customerLogos: "Customer logos",
-    productScreenshotNote: "Product screenshot to be supplied",
-    screenshotCaption: "Product screenshot to be supplied",
+    productScreenshotNote: "Approved product screenshot not supplied",
+    screenshotCaption: "Screenshots pending approved product captures",
     brandName: "WorkPlanX",
     logoAlt: "WorkPlanX",
     menuOpen: "Open navigation menu",
@@ -34,7 +34,7 @@ export const siteContent = {
     logoLink: "WorkPlanX home",
   },
   navigation: {
-      links: [
+    links: [
       { label: "How it works", href: "#how-it-works", id: "how-it-works" },
       { label: "Our work", href: "#our-work", id: "our-work" },
       { label: "Portal & Mobile", href: "#access-points", id: "access-points" },
@@ -50,12 +50,12 @@ export const siteContent = {
   hero: {
     headline: "One platform for your entire project lifecycle.",
     subheadline:
-      "From workforce and daily operations to reporting, waste management, payroll and invoicing, all in one place.",
+      "Plan crews, capture site work, manage waste, run payroll and invoice in one connected workflow.",
     contactLabel: "Contact us",
     secondaryLabel: "See how it works",
     secondaryHref: "#how-it-works",
     trustLine:
-      "Built for labour-based, site-delivered services, with a specialist waste and resource-recovery core.",
+      "Built for labour-based, site-delivered services, with waste and resource recovery at its core.",
     image: {
       src: "/images/screens/roster.png",
       alt: "WorkPlanX roster product screen",
@@ -64,24 +64,16 @@ export const siteContent = {
       placeholder: "Roster product screenshot",
       available: false,
     },
-    mobileImage: {
-      src: "/images/screens/mobile-app.png",
-      alt: "WorkPlanX mobile app product screen",
-      width: 390,
-      height: 844,
-      placeholder: "Mobile app screenshot",
-      available: false,
-    },
   },
   problemStrip: {
-    heading: "Keep the whole operation in view.",
+    heading: "When work is spread across systems.",
     problems: [
       "We don't know if we're making money on this job.",
       "Payroll takes days and still goes wrong.",
       "We invoice late and miss variations.",
       "Our clients keep calling for updates.",
     ],
-    closing: "WorkPlanX puts it all in one place.",
+    closing: "WorkPlanX connects the work from site to office.",
   },
   howItWorks: {
     heading: "From the plan to the final account.",
@@ -112,9 +104,7 @@ export const siteContent = {
     ],
   },
   showcase: {
-    heading: "See the work as it happens.",
-    description:
-      "One connected workflow for planning, field records, resource recovery, payroll and invoicing.",
+    heading: "A connected view of the work.",
     tabs: [
       {
         id: "roster",
@@ -199,10 +189,10 @@ export const siteContent = {
       },
     ],
     contactLabel: "Contact us",
-    contactPrompt: "See how WorkPlanX can support your project workflow.",
+    contactPrompt: "Explore your project workflow with WorkPlanX.",
   },
   accessPoints: {
-    heading: "One platform. Three ways in.",
+    heading: "For office, field and customer teams.",
     cards: [
       {
         id: "admin",
@@ -267,16 +257,24 @@ export const siteContent = {
     requiredNote: "All fields are required.",
     submitLabel: "Contact us",
     sendingLabel: "Sending…",
+    retryLabel: "Try again",
     successMessage: "Your message was sent.",
     errorMessage: "Your message couldn't be submitted. Check the fields and try again.",
     deliveryUnavailable:
       "Contact delivery is not configured. This message was not stored or sent to the WorkPlanX team.",
     deliveryNotice:
       "The contact form is not connected yet. Messages are not stored or delivered.",
+    limits: {
+      name: 120,
+      email: 254,
+      company: 160,
+      message: 4000,
+    },
     validation: {
       required: "Please complete this field.",
-    invalidEmail: "Enter a valid email address.",
+      invalidEmail: "Enter a valid email address.",
       workEmail: "Enter a work email address rather than a personal email.",
+      tooLong: (maxLength: number) => `Use ${maxLength} characters or fewer.`,
     },
   },
   footer: {

@@ -29,13 +29,7 @@ export function Hero() {
           className="hero__main-screen"
           priority
         />
-        <div className="hero__mobile-screen">
-          <ProductScreen image={content.mobileImage} compact />
-        </div>
-        <div className="hero__screen-caption">
-          <span className="signal-dot" />
-          <span>{siteContent.accessibility.screenshotCaption}</span>
-        </div>
+        <p className="hero__screen-caption">{siteContent.accessibility.screenshotCaption}</p>
       </div>
     </section>
   );

@@ -13,6 +13,7 @@ colors:
   slate-200: "#e2e8f0"
   error-red: "#dc2626"
   on-error: "#ffffff"
+  success-green: "#166534"
   focus-blue: "#395af3"
 typography:
   display:
@@ -116,6 +117,7 @@ The palette pairs the official logo blue with white and cool slate neutrals; blu
 
 ### Semantic
 - **Error Red** (`{colors.error-red}`) with **White on Error** (`{colors.on-error}`): Error/destructive states; pair with explicit text or an icon, not color alone.
+- **Success Green** (`{colors.success-green}`): Reserved for a confirmed successful form submission; pair with explicit status text.
 - **Focus Blue** (`{colors.focus-blue}`): Visible keyboard-focus treatment, reinforced by a 3px outline/shadow treatment in CSS.
 
 **The One Signal Rule.** Keep the official blue the single dominant brand accent; do not introduce an unrelated CTA accent.
@@ -132,6 +134,7 @@ The palette pairs the official logo blue with white and cool slate neutrals; blu
 
 ### Hierarchy
 - **Display** (600, `3.5rem` / `3.75rem`): Large display moments; scale down responsively on small viewports.
+- **Responsive display sizes:** The hero and section heading sizes fluidly scale between the documented headline and display/title steps, using the CSS type tokens.
 - **Headline** (600, `2.75rem` / `3.125rem`): Primary page heading and major statements.
 - **Title** (600, `2rem` / `2.5rem`): Section and panel titles.
 - **Supporting titles** (600, `1.5rem` / `2rem`; `1.25rem` / `1.75rem`): Smaller hierarchy levels.
