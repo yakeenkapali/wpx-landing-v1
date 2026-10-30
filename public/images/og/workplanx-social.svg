@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="wash" x1="874" y1="28" x2="1134" y2="558" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E7EDFF"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="shadow" x="654" y="74" width="540" height="493" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix values="0 0 0 0 0.059 0 0 0 0 0.09 0 0 0 0 0.16 0 0 0 0.12 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+  <path fill="#F8FAFC" d="M0 0h1200v630H0z"/>
+  <path fill="url(#wash)" d="M731 0h469v630H731z"/>
+  <circle cx="1106" cy="34" r="204" fill="#DCE5FF" fill-opacity=".62"/>
+  <circle cx="1137" cy="607" r="235" fill="#EAF0FF"/>
+
+  <text x="80" y="119" fill="#395AF3" font-family="Inter,Arial,sans-serif" font-size="36" font-weight="700" letter-spacing="-1.2">WorkPlanX</text>
+  <rect x="80" y="160" width="65" height="5" rx="2.5" fill="#395AF3"/>
+  <text x="76" y="264" fill="#0F172A" font-family="Inter,Arial,sans-serif" font-size="61" font-weight="650" letter-spacing="-2.8">One platform for</text>
+  <text x="76" y="337" fill="#0F172A" font-family="Inter,Arial,sans-serif" font-size="61" font-weight="650" letter-spacing="-2.8">your entire project</text>
+  <text x="76" y="410" fill="#0F172A" font-family="Inter,Arial,sans-serif" font-size="61" font-weight="650" letter-spacing="-2.8">lifecycle.</text>
+  <text x="80" y="475" fill="#475569" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="400">Plan crews, capture site work, manage waste,</text>
+  <text x="80" y="511" fill="#475569" font-family="Inter,Arial,sans-serif" font-size="24" font-weight="400">run payroll and invoice in one connected workflow.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="707" y="105" width="452" height="405" rx="18" fill="#FFFFFF"/>
+    <path d="M725 105h416a18 18 0 0 1 18 18v41H707v-41a18 18 0 0 1 18-18Z" fill="#FFFFFF"/>
+    <path d="M708 164.5h450" stroke="#E2E8F0"/>
+    <circle cx="733" cy="135" r="5" fill="#CBD5E1"/>
+    <circle cx="751" cy="135" r="5" fill="#CBD5E1"/>
+    <circle cx="769" cy="135" r="5" fill="#CBD5E1"/>
+    <rect x="802" y="128" width="118" height="14" rx="7" fill="#F1F5F9"/>
+    <rect x="736" y="189" width="171" height="21" rx="5" fill="#0F172A" fill-opacity=".9"/>
+    <rect x="736" y="222" width="112" height="12" rx="6" fill="#94A3B8"/>
+    <rect x="736" y="263" width="390" height="1" fill="#E2E8F0"/>
+    <rect x="736" y="284" width="390" height="43" rx="8" fill="#F8FAFC"/>
+    <rect x="751" y="299" width="98" height="12" rx="6" fill="#64748B"/>
+    <rect x="904" y="297" width="58" height="16" rx="8" fill="#E7EDFF"/>
+    <rect x="1056" y="299" width="52" height="12" rx="6" fill="#94A3B8"/>
+    <rect x="736" y="338" width="390" height="43" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="751" y="354" width="119" height="12" rx="6" fill="#64748B"/>
+    <rect x="904" y="351" width="58" height="16" rx="8" fill="#E7EDFF"/>
+    <rect x="1056" y="354" width="52" height="12" rx="6" fill="#94A3B8"/>
+    <rect x="736" y="392" width="390" height="43" rx="8" fill="#F8FAFC"/>
+    <rect x="751" y="408" width="106" height="12" rx="6" fill="#64748B"/>
+    <rect x="904" y="405" width="58" height="16" rx="8" fill="#DCFCE7"/>
+    <rect x="1056" y="408" width="52" height="12" rx="6" fill="#94A3B8"/>
+    <rect x="736" y="457" width="130" height="34" rx="7" fill="#395AF3"/>
+    <rect x="755" y="468" width="92" height="12" rx="6" fill="#FFFFFF" fill-opacity=".95"/>
+  </g>
+</svg>

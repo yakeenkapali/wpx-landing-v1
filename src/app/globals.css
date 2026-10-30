@@ -75,6 +75,6 @@ body {
 }
 
 :focus-visible {
-  outline: none;
-  box-shadow: var(--wpx-focus-ring);
+  outline: 3px solid var(--wpx-color-ring);
+  outline-offset: 3px;
 }

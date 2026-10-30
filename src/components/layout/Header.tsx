@@ -16,13 +16,13 @@ export function Header() {
   function handleMenuKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
     if (event.key === "Escape" && menuOpen) {
       closeMenu();
-      document.querySelector<HTMLButtonElement>(".menu-toggle")?.focus();
+      event.currentTarget.querySelector<HTMLButtonElement>(".menu-toggle")?.focus();
     }
   }
 
   return (
     <header className="site-header">
-      <div className="site-header__inner content-width">
+      <div className="site-header__inner content-width" onKeyDown={handleMenuKeyDown}>
         <a className="site-brand" href="#top" aria-label={siteContent.accessibility.logoLink} onClick={closeMenu}>
           <Image
             className="site-brand__full"
@@ -50,7 +50,6 @@ export function Header() {
         <div
           className={`site-header__nav-wrap${menuOpen ? " is-open" : ""}`}
           id="primary-navigation"
-          onKeyDown={handleMenuKeyDown}
         >
           <nav className="site-nav" aria-label={content.mobileLinkListLabel}>
             {content.links.map((link) => (

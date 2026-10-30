@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { siteContent } from "@/content/site";
 
 type SubmissionState = "idle" | "submitting" | "success" | "error";
@@ -13,6 +13,19 @@ export function Contact() {
   const [serverError, setServerError] = useState("");
   const [serverFieldErrors, setServerFieldErrors] = useState<FieldErrors>({});
   const [retryAvailable, setRetryAvailable] = useState(false);
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
+
+  useEffect(() => {
+    if (!hasUnsavedChanges) return;
+
+    function warnBeforeLeaving(event: BeforeUnloadEvent) {
+      event.preventDefault();
+      event.returnValue = "";
+    }
+
+    window.addEventListener("beforeunload", warnBeforeLeaving);
+    return () => window.removeEventListener("beforeunload", warnBeforeLeaving);
+  }, [hasUnsavedChanges]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -76,6 +89,7 @@ export function Contact() {
         return;
       }
       setState("success");
+      setHasUnsavedChanges(false);
       form.reset();
     } catch {
       setServerError(content.errorMessage);
@@ -85,6 +99,7 @@ export function Contact() {
   }
 
   function clearError(name: keyof FieldErrors) {
+    setHasUnsavedChanges(true);
     setErrors((current) => ({ ...current, [name]: undefined }));
     setServerFieldErrors((current) => ({ ...current, [name]: undefined }));
     setServerError("");
@@ -106,7 +121,13 @@ export function Contact() {
           </p>
         </div>
 
-        <form className="contact-form" id="contact-form" onSubmit={handleSubmit} noValidate>
+        <form
+          aria-busy={state === "submitting"}
+          className="contact-form"
+          id="contact-form"
+          onSubmit={handleSubmit}
+          noValidate
+        >
           <div className="contact-form__grid">
             <Field
               id="name"
@@ -150,7 +171,7 @@ export function Contact() {
                 rows={4}
               />
               {errors.message || serverFieldErrors.message ? (
-                <span className="form-field__error" id="message-error">
+                <span className="form-field__error" id="message-error" aria-live="polite">
                   {errors.message ?? serverFieldErrors.message}
                 </span>
               ) : null}
@@ -165,13 +186,16 @@ export function Contact() {
             >
               {state === "submitting" ? content.sendingLabel : content.submitLabel}
             </button>
+            <span className="visually-hidden" role="status" aria-live="polite" aria-atomic="true">
+              {state === "submitting" ? content.sendingLabel : ""}
+            </span>
             {state === "success" ? (
               <p className="form-status form-status--success" role="status">
                 {content.successMessage}
               </p>
             ) : null}
             {state === "error" ? (
-              <p className="form-status form-status--error" role="alert">
+              <p className="form-status form-status--error" role="status" aria-live="polite">
                 {serverError || content.errorMessage}
               </p>
             ) : null}
@@ -205,7 +229,7 @@ function Field({
 }: {
   id: "name" | "email" | "company";
   label: string;
-  type?: string;
+  type?: "text" | "email";
   autoComplete: string;
   error?: string;
   onChange: () => void;
@@ -222,12 +246,14 @@ function Field({
         id={id}
         name={id}
         maxLength={maxLength}
+        inputMode={type === "email" ? "email" : undefined}
         onChange={onChange}
         required={required}
+        spellCheck={type !== "email"}
         type={type}
       />
       {error ? (
-        <span className="form-field__error" id={`${id}-error`}>
+        <span className="form-field__error" id={`${id}-error`} aria-live="polite">
           {error}
         </span>
       ) : null}

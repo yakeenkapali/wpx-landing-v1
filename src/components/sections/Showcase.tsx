@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { siteContent } from "@/content/site";
 import { ContactLink } from "@/components/ui/ContactLink";
 import { ProductScreen } from "@/components/ui/ProductScreen";
@@ -11,6 +11,35 @@ export function Showcase() {
   const content = siteContent.showcase;
   const [activeId, setActiveId] = useState<string>(content.tabs[0].id);
   const activeTab = content.tabs.find((tab) => tab.id === activeId) ?? content.tabs[0];
+
+  useEffect(() => {
+    function syncTabFromUrl() {
+      const requestedId = new URLSearchParams(window.location.search).get("workflow");
+      if (requestedId && content.tabs.some((tab) => tab.id === requestedId)) {
+        setActiveId(requestedId);
+      } else {
+        setActiveId(content.tabs[0].id);
+      }
+    }
+
+    syncTabFromUrl();
+    window.addEventListener("popstate", syncTabFromUrl);
+    return () => window.removeEventListener("popstate", syncTabFromUrl);
+  }, [content.tabs]);
+
+  function selectTab(id: string) {
+    if (id === activeId) return;
+    setActiveId(id);
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    if (id === content.tabs[0].id) {
+      params.delete("workflow");
+    } else {
+      params.set("workflow", id);
+    }
+    url.search = params.toString();
+    window.history.pushState(window.history.state, "", url);
+  }
 
   function handleKeyDown(event: React.KeyboardEvent<HTMLButtonElement>, index: number) {
     let nextIndex: number | undefined;
@@ -25,7 +54,7 @@ export function Showcase() {
     if (nextIndex !== undefined) {
       event.preventDefault();
       const nextTab = content.tabs[nextIndex];
-      setActiveId(nextTab.id);
+      selectTab(nextTab.id);
       document.getElementById(`showcase-tab-${nextTab.id}`)?.focus();
     }
   }
@@ -59,7 +88,7 @@ export function Showcase() {
                 className={`showcase-tabs__tab${activeId === tab.id ? " is-active" : ""}`}
                 id={getTabId(tab.id)}
                 key={tab.id}
-                onClick={() => setActiveId(tab.id)}
+                onClick={() => selectTab(tab.id)}
                 onKeyDown={(event) => handleKeyDown(event, index)}
                 role="tab"
                 tabIndex={activeId === tab.id ? 0 : -1}

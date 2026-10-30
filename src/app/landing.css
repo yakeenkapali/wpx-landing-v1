@@ -26,8 +26,11 @@ textarea {
 }
 
 button,
-a {
-  -webkit-tap-highlight-color: transparent;
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: rgb(57 90 243 / 16%);
+  touch-action: manipulation;
 }
 
 button {
@@ -54,6 +57,12 @@ h2,
 h3,
 figure {
   margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 ::selection {
@@ -86,7 +95,7 @@ figure {
   clip-path: inset(50%);
 }
 
-.skip-link:focus {
+.skip-link:focus-visible {
   z-index: 1000;
   top: 12px;
   left: 12px;
@@ -923,7 +932,6 @@ figure {
   padding: 11px 13px;
   border: 1px solid #e2e8f0;
   border-radius: var(--wpx-radius-sm);
-  outline: none;
   color: #0f172a;
   background: #fff;
   font-size: 1rem;
@@ -942,10 +950,9 @@ figure {
   border-color: #94a3b8;
 }
 
-.form-field input:focus,
-.form-field textarea:focus {
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
   border-color: var(--wpx-color-primary);
-  box-shadow: 0 0 0 3px rgb(57 90 243 / 0.12);
 }
 
 .form-field input[aria-invalid="true"],
