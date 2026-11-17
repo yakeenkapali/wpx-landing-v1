@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P13 (`ui/p02-foundation`): changed the hero workflow pills surrounding the project card from blue to neutral surface styling. Files: `src/app/globals.css`.
 - 2026-11-17 — P12 (`ui/p02-foundation`): reduced client logo display sizes while retaining the existing responsive four-column/two-column layout. Files: `src/app/globals.css`.
 - 2026-11-17 — P11 (`ui/p02-foundation`): added another 16px of hero top and bottom spacing on desktop and mobile. Files: `src/app/globals.css`.
 - 2026-11-17 — P10 (`ui/p02-foundation`): increased hero top and bottom spacing another step on desktop and mobile. Files: `src/app/globals.css`.
