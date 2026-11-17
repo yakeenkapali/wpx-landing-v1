@@ -58,8 +58,15 @@ export function HeroWorkflow() {
             </pattern>
           </defs>
           <rect height="390" width="600" fill="url(#hero-grid)" />
-          <path d="M300 190 105 92M300 190 495 92M300 190 95 288M300 190 505 288M300 190 300 350" />
         </svg>
+        <Image
+          alt=""
+          aria-hidden="true"
+          className="hero-workflow__connectors"
+          height={278.573}
+          src="/hero/hero-connectors.png"
+          width={442.415}
+        />
         <div className="hero-workflow__panel">
           <div className="hero-workflow__customer">
             <Image

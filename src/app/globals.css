@@ -204,19 +204,15 @@
   stroke-width: 1;
 }
 
-.hero-workflow__lines > path {
-  fill: none;
-  stroke: color-mix(in srgb, var(--primary) 38%, transparent);
-  stroke-width: 1.5;
-  stroke-dasharray: 420;
-  stroke-dashoffset: 0;
-}
-
-.hero-workflow[data-enhanced="true"][data-visible="true"]
-  .hero-workflow__lines
-  > path {
-  stroke-dashoffset: 420;
-  animation: hero-connect 900ms var(--ease-out) 200ms forwards;
+.hero-workflow__connectors {
+  position: absolute;
+  z-index: 1;
+  top: 24.88%;
+  left: 15.83%;
+  width: 68.34%;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
 }
 
 .hero-workflow__panel {
@@ -1736,11 +1732,6 @@
   animation: none;
 }
 
-@keyframes hero-connect {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 @keyframes hero-node-in {
   from {
     opacity: 0;
@@ -2228,11 +2219,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-workflow__lines > path {
-    stroke-dashoffset: 0;
-    animation: none;
-  }
-
   .hero-workflow .hero-node {
     opacity: 1;
     animation: none;
