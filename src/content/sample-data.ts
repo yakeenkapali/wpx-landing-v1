@@ -40,9 +40,9 @@ export const sampleData = {
     active: "In progress",
   },
   hero: {
-    record: "Project record",
-    project: "Northside works",
-    detail: "People · site · scope",
+    customer: "Northside",
+    project: "Northside Project",
+    address: "27 Adelaide St, Brisbane City QLD 4000, Australia",
     connected: [
       "Field reports",
       "Resource recovery",

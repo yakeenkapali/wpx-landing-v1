@@ -229,7 +229,6 @@
   color: var(--foreground);
 }
 
-.hero-workflow__eyebrow,
 .ui-kicker {
   display: block;
   color: var(--muted-fg);
@@ -239,35 +238,33 @@
   text-transform: uppercase;
 }
 
+.hero-workflow__customer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--foreground);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: normal;
+}
+
+.hero-workflow__avatar {
+  flex: 0 0 auto;
+  border-radius: var(--radius-full);
+}
+
 .hero-workflow__panel h2 {
-  margin: var(--space-2) 0 0;
-  font-size: var(--fs-title);
-  line-height: var(--lh-title);
+  margin: var(--space-3) 0 0;
+  font-size: var(--fs-subtitle);
+  line-height: var(--lh-subtitle);
   letter-spacing: var(--ls-headline);
 }
 
 .hero-workflow__panel p {
-  margin: var(--space-1) 0 var(--space-4);
-  color: var(--muted-fg);
-  font-size: var(--fs-small);
-}
-
-.hero-workflow__record-line {
-  height: 1px;
-  background: var(--border);
-}
-
-.hero-workflow__record-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--space-3);
+  margin: var(--space-1) 0 0;
   color: var(--muted-fg);
   font-size: var(--fs-caption);
-}
-
-.hero-workflow__record-meta svg {
-  color: var(--success);
+  line-height: var(--lh-caption);
 }
 
 .hero-workflow__nodes {
@@ -2041,9 +2038,6 @@
   .hero-workflow__panel {
     width: 52%;
     padding: var(--space-4);
-  }
-  .hero-workflow__panel h2 {
-    font-size: var(--fs-subtitle);
   }
   .hero-node {
     min-height: 32px;
