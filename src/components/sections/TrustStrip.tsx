@@ -1,10 +1,8 @@
 import { Container } from "@/components/layout/Container";
-import { CalendarDays, History, Layers3, ReceiptText } from "lucide-react";
+import { CalendarDays, Layers3 } from "lucide-react";
 import { siteContent } from "@/content/site";
 
 const icons = {
-  receipt: ReceiptText,
-  history: History,
   calendar: CalendarDays,
   layers: Layers3,
 } as const;

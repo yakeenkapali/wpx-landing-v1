@@ -33,8 +33,6 @@ export const siteContent = {
     trust: {
       heading: "Built around the work that needs to connect.",
       facts: [
-        { label: "Xero invoice sync", icon: "receipt" },
-        { label: "Full audit trail", icon: "history" },
         { label: "Award / EA / NES payroll", icon: "calendar" },
         { label: "Multi-branch workspaces", icon: "layers" },
       ],
@@ -71,12 +69,6 @@ export const siteContent = {
           id: "payroll",
           title: "Payroll",
           description: "Timesheets flow through Award / EA / NES payroll.",
-        },
-        {
-          id: "invoicing",
-          title: "Invoicing and Xero",
-          description:
-            "Create invoices from claims or signed dockets; sync with Xero.",
         },
         {
           id: "projects",
