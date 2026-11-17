@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P32 (`ui/hero-circle-opacity`): set all four hero background circles’ peak gradient opacity to 0.01. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`, `docs/ui/modules/website.md`. DS impact: 0 tokens, 0 components.
 - 2026-11-17 — P31 (`ui/hero-circle-opacity`): reduced the peak opacity of all four hero background circles by 40%, from 0.08 to 0.048. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`, `docs/ui/modules/website.md`. DS impact: 0 tokens, 0 components.
 - 2026-11-17 — P30 (`ui/nav-hover-state`): the sticky header now shows its background, divider, and subtle shadow after scrolling, while keyboard focus continues to reveal them. Files: `src/components/layout/Header.tsx`, `docs/ui/modules/website.md`. DS impact: 0 tokens, 0 components.
 - 2026-11-17 — P29 (`ui/nav-hover-state`): made the sticky header's background, divider and subtle shadow appear on hover or keyboard focus rather than by default. Files: `src/components/layout/Header.tsx`.
