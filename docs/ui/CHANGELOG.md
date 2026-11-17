@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P19 (`ui/hero-project-card`): reduced excess space inside the hero project card and let its height follow the content. Browser checked at the available desktop viewport. Files: `src/app/globals.css`.
 - 2026-11-17 — P18 (`ui/hero-project-card`): updated the hero project card with the Northside customer avatar/name, project name, and site address, retaining the existing workflow styling. Files: `src/components/visuals/HeroWorkflow.tsx`, `src/content/sample-data.ts`, `src/app/globals.css`, `public/hero/northside-avatar.png`. Module doc: `docs/ui/modules/website.md`.
 - 2026-11-17 — P17 (`ui/p02-foundation`): removed the “Illustrative workflow · not a product screenshot” caption from the hero, Product & Solutions, and Access Points visuals. Files: `src/content/site.ts`, `src/components/visuals/VisualFigure.tsx`, `src/components/visuals/HeroWorkflow.tsx`, `src/components/sections/ProductSolutions.tsx`, `src/components/sections/AccessPoints.tsx`, visual components, `docs/ui/modules/website.md`.
 - 2026-11-17 — P16 (`ui/p02-foundation`): hid the entire Trust Strip, including Xero invoice sync, audit trail, payroll and workspace facts, while retaining its source component and data. Files: `src/app/page.tsx`, `docs/ui/modules/website.md`.

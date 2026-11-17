@@ -219,8 +219,10 @@
   top: 28%;
   left: 50%;
   width: min(52%, 19rem);
-  min-height: 10.5rem;
-  padding: var(--space-6);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   transform: translate(-50%, -50%);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -254,14 +256,14 @@
 }
 
 .hero-workflow__panel h2 {
-  margin: var(--space-3) 0 0;
+  margin: 0;
   font-size: var(--fs-subtitle);
   line-height: var(--lh-subtitle);
   letter-spacing: var(--ls-headline);
 }
 
 .hero-workflow__panel p {
-  margin: var(--space-1) 0 0;
+  margin: 0;
   color: var(--muted-fg);
   font-size: var(--fs-caption);
   line-height: var(--lh-caption);
@@ -2037,7 +2039,6 @@
   }
   .hero-workflow__panel {
     width: 52%;
-    padding: var(--space-4);
   }
   .hero-node {
     min-height: 32px;
@@ -2160,7 +2161,6 @@
   }
   .hero-workflow__panel {
     top: 29%;
-    min-height: 9rem;
   }
   .roster-grid__person {
     gap: var(--space-1);
