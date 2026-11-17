@@ -5,15 +5,10 @@ import { StatusBadge } from "@/components/visuals/StatusBadge";
 import { UiFrame } from "@/components/visuals/UiFrame";
 import { VisualFigure } from "@/components/visuals/VisualFigure";
 
-type RosterVisualProps = { caption: string };
-
-export function RosterVisual({ caption }: RosterVisualProps) {
+export function RosterVisual() {
   const { days, rows } = sampleData.roster;
   return (
-    <VisualFigure
-      caption={caption}
-      description="Illustrative weekly roster with crew assignments"
-    >
+    <VisualFigure description="Illustrative weekly roster with crew assignments">
       <UiFrame>
         <div className="ui-heading-row">
           <div>

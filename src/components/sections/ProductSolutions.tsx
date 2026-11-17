@@ -48,9 +48,7 @@ export function ProductSolutions() {
                     <h3>{card.title}</h3>
                     <p>{card.description}</p>
                   </div>
-                  <Visual
-                    caption={siteContent.sections.solutions.visualCaption}
-                  />
+                  <Visual />
                 </article>
               </Reveal>
             );
@@ -66,9 +64,7 @@ export function ProductSolutions() {
                 <p>{siteContent.sections.solutions.waste.description}</p>
                 <p>{siteContent.sections.solutions.waste.detail}</p>
               </div>
-              <RecoveryVisual
-                caption={siteContent.sections.solutions.visualCaption}
-              />
+              <RecoveryVisual />
             </article>
           </Reveal>
         </div>

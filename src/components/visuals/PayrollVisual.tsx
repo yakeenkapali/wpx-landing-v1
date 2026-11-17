@@ -4,14 +4,9 @@ import { StatusBadge } from "@/components/visuals/StatusBadge";
 import { UiFrame } from "@/components/visuals/UiFrame";
 import { VisualFigure } from "@/components/visuals/VisualFigure";
 
-type PayrollVisualProps = { caption: string };
-
-export function PayrollVisual({ caption }: PayrollVisualProps) {
+export function PayrollVisual() {
   return (
-    <VisualFigure
-      caption={caption}
-      description="Illustrative timesheet rows and approval statuses"
-    >
+    <VisualFigure description="Illustrative timesheet rows and approval statuses">
       <UiFrame>
         <div className="ui-heading-row">
           <div>

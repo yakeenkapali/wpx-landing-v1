@@ -2,7 +2,7 @@ import type { PropsWithChildren } from "react";
 
 type VisualFigureProps = PropsWithChildren<{
   description: string;
-  caption: string;
+  caption?: string;
   className?: string;
 }>;
 
@@ -20,7 +20,7 @@ export function VisualFigure({
       <div aria-hidden="true" className="product-visual__surface">
         {children}
       </div>
-      <figcaption>{caption}</figcaption>
+      {caption ? <figcaption>{caption}</figcaption> : null}
     </figure>
   );
 }

@@ -4,14 +4,9 @@ import { PhoneFrame } from "@/components/visuals/PhoneFrame";
 import { StatusBadge } from "@/components/visuals/StatusBadge";
 import { VisualFigure } from "@/components/visuals/VisualFigure";
 
-type ReportVisualProps = { caption: string };
-
-export function ReportVisual({ caption }: ReportVisualProps) {
+export function ReportVisual() {
   return (
-    <VisualFigure
-      caption={caption}
-      description="Illustrative mobile daily report with checklist, photos and sign-off"
-    >
+    <VisualFigure description="Illustrative mobile daily report with checklist, photos and sign-off">
       <div className="report-stage">
         <PhoneFrame>
           <div className="report-card">

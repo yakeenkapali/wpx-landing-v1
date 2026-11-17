@@ -1,7 +1,6 @@
 import { CircleCheck } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { sampleData } from "@/content/sample-data";
-import { siteContent } from "@/content/site";
 
 export function HeroWorkflow() {
   return (
@@ -50,7 +49,6 @@ export function HeroWorkflow() {
           ))}
         </div>
       </div>
-      <figcaption>{siteContent.sections.hero.visualCaption}</figcaption>
     </Reveal>
   );
 }

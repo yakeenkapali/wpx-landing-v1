@@ -4,14 +4,9 @@ import { StatusBadge } from "@/components/visuals/StatusBadge";
 import { UiFrame } from "@/components/visuals/UiFrame";
 import { VisualFigure } from "@/components/visuals/VisualFigure";
 
-type ProjectsVisualProps = { caption: string };
-
-export function ProjectsVisual({ caption }: ProjectsVisualProps) {
+export function ProjectsVisual() {
   return (
-    <VisualFigure
-      caption={caption}
-      description="Illustrative project list with stages and progress"
-    >
+    <VisualFigure description="Illustrative project list with stages and progress">
       <UiFrame>
         <div className="ui-heading-row">
           <div>

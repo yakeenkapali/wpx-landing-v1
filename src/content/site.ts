@@ -28,7 +28,6 @@ export const siteContent = {
       lead: "One platform to manage the entire project lifecycle: workforce, daily operations, reporting, waste management, payroll and invoicing.",
       contactLabel: "Contact us",
       secondaryLabel: "See how it works",
-      visualCaption: "Illustrative workflow · not a product screenshot",
     },
     trust: {
       heading: "Built around the work that needs to connect.",
@@ -54,7 +53,6 @@ export const siteContent = {
       heading: "One connected workflow for every project.",
       description:
         "The entire project lifecycle: workforce, daily operations, reporting, waste management, payroll and invoicing.",
-      visualCaption: "Illustrative workflow · not a product screenshot",
       cards: [
         {
           id: "roster",
@@ -94,7 +92,6 @@ export const siteContent = {
     },
     access: {
       heading: "For office, field and customer teams.",
-      visualCaption: "Illustrative workflow · not a product screenshot",
       cards: [
         {
           id: "admin",

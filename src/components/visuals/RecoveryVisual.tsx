@@ -4,12 +4,9 @@ import { StatusBadge } from "@/components/visuals/StatusBadge";
 import { UiFrame } from "@/components/visuals/UiFrame";
 import { VisualFigure } from "@/components/visuals/VisualFigure";
 
-type RecoveryVisualProps = { caption: string };
-
-export function RecoveryVisual({ caption }: RecoveryVisualProps) {
+export function RecoveryVisual() {
   return (
     <VisualFigure
-      caption={caption}
       description="Illustrative weigh ticket and resource recovery report"
       className="recovery-visual"
     >

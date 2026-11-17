@@ -27,10 +27,7 @@ export function AccessPoints() {
             >
               <article>
                 <h3>{card.title}</h3>
-                <AccessVisual
-                  kind={card.id}
-                  caption={siteContent.sections.access.visualCaption}
-                />
+                <AccessVisual kind={card.id} />
                 <p>{card.role}</p>
               </article>
             </Reveal>

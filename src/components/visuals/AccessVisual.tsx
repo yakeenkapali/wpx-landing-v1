@@ -13,7 +13,6 @@ import { VisualFigure } from "@/components/visuals/VisualFigure";
 
 type AccessVisualProps = {
   kind: "admin" | "mobile" | "customer";
-  caption: string;
 };
 
 function AdminUI() {
@@ -128,7 +127,7 @@ function CustomerUI() {
   );
 }
 
-export function AccessVisual({ kind, caption }: AccessVisualProps) {
+export function AccessVisual({ kind }: AccessVisualProps) {
   const descriptions = {
     admin:
       "Illustrative admin portal dashboard with workspace navigation and project activity",
@@ -138,7 +137,6 @@ export function AccessVisual({ kind, caption }: AccessVisualProps) {
   };
   return (
     <VisualFigure
-      caption={caption}
       description={descriptions[kind]}
       className={`access-visual access-visual--${kind}`}
     >

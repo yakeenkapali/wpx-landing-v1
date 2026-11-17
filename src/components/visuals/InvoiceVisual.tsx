@@ -4,14 +4,9 @@ import { StatusBadge } from "@/components/visuals/StatusBadge";
 import { UiFrame } from "@/components/visuals/UiFrame";
 import { VisualFigure } from "@/components/visuals/VisualFigure";
 
-type InvoiceVisualProps = { caption: string };
-
-export function InvoiceVisual({ caption }: InvoiceVisualProps) {
+export function InvoiceVisual() {
   return (
-    <VisualFigure
-      caption={caption}
-      description="Illustrative invoice with sample line items and Xero sync status"
-    >
+    <VisualFigure description="Illustrative invoice with sample line items and Xero sync status">
       <UiFrame>
         <div className="invoice-document">
           <div className="invoice-document__head">
