@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P35 (`ui/hero-circle-opacity`): removed the background grid from the hero workflow artwork while keeping its circle outlines and connector lines. Files: `src/components/visuals/HeroWorkflow.tsx`, `docs/ui/modules/website.md`. DS impact: 0 tokens, 0 components.
 - 2026-11-17 — P34 (`ui/hero-circle-opacity`): restored all four hero background circles’ peak gradient opacity to 0.08. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`, `docs/ui/modules/website.md`. DS impact: 0 tokens, 0 components.
 - 2026-11-17 — P33 (`ui/hero-circle-opacity`): set all four hero background circles’ peak gradient opacity to 0.04. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`, `docs/ui/modules/website.md`. DS impact: 0 tokens, 0 components.
 - 2026-11-17 — P32 (`ui/hero-circle-opacity`): set all four hero background circles’ peak gradient opacity to 0.01. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`, `docs/ui/modules/website.md`. DS impact: 0 tokens, 0 components.
