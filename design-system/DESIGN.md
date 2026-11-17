@@ -41,11 +41,11 @@ The single source of truth. Everything below refers to these names; no value is 
   /* Type */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
-  --fs-display:  clamp(2.25rem, 5.9vw, 5.8rem);  --lh-display: 0.99;  --ls-display: -0.065em;
-  --fs-headline: clamp(2rem, 3.5vw, 3.45rem);    --lh-headline: 1.06; --ls-headline: -0.055em;
-  --fs-title:    1.5rem;    --lh-title: 2rem;
-  --fs-subtitle: 1.25rem;   --lh-subtitle: 1.75rem;
-  --fs-lead:     1.125rem;  --lh-lead: 1.75rem;
+  --fs-display:  clamp(2rem, 4.6vw, 4.6rem);   --lh-display: 0.99;  --ls-display: -0.065em;
+  --fs-headline: clamp(1.625rem, 2.5vw, 2.5rem); --lh-headline: 1.06; --ls-headline: -0.055em;
+  --fs-title:    1.25rem;    --lh-title: 1.75rem;
+  --fs-subtitle: 1.125rem;   --lh-subtitle: 1.5rem;
+  --fs-lead:     1rem;       --lh-lead: 1.5rem;
   --fs-body:     1rem;      --lh-body: 1.625rem;
   --fs-small:    0.875rem;  --lh-small: 1.25rem;
   --fs-caption:  0.75rem;   --lh-caption: 1rem;
@@ -83,7 +83,7 @@ Breakpoints: 480, 640, 768, 900, 1024px. Validate at 375, 768, 1024 and 1440px.
 | Role | Token |
 |---|---|
 | Primary action, links, selected state, focus | `--primary` (hover: `--primary-hover`, text on it: `--on-primary`) |
-| Hero ground | `--primary` with a faint square rule and concentric line-work |
+| Hero ground | `--background` with subtle primary-tinted square rule and concentric line-work |
 | Page and card surface | `--background` |
 | Quiet section background | `--surface` |
 | Workflow showcase and diagram ground | `--surface-alt` |
