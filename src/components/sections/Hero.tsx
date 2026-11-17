@@ -32,7 +32,10 @@ export function Hero() {
               {siteContent.sections.hero.lead}
             </p>
             <div className="hero-section__actions">
-              <Button href={siteContent.navigation.contact.href}>
+              <Button
+                className="min-h-11"
+                href={siteContent.navigation.contact.href}
+              >
                 {siteContent.sections.hero.contactLabel}
               </Button>
               <a className="hero-section__secondary" href="#solutions">
