@@ -10,6 +10,38 @@ export function HeroWorkflow() {
       className="hero-workflow"
     >
       <div aria-hidden="true" className="hero-workflow__art">
+        <Image
+          alt=""
+          aria-hidden="true"
+          className="hero-workflow__circle hero-workflow__circle--1"
+          height={854.333}
+          src="/hero/hero-circle-01.svg"
+          width={854.333}
+        />
+        <Image
+          alt=""
+          aria-hidden="true"
+          className="hero-workflow__circle hero-workflow__circle--2"
+          height={1309.44}
+          src="/hero/hero-circle-02.svg"
+          width={1309.44}
+        />
+        <Image
+          alt=""
+          aria-hidden="true"
+          className="hero-workflow__circle hero-workflow__circle--3"
+          height={1764.56}
+          src="/hero/hero-circle-03.svg"
+          width={1764.56}
+        />
+        <Image
+          alt=""
+          aria-hidden="true"
+          className="hero-workflow__circle hero-workflow__circle--4"
+          height={2219.67}
+          src="/hero/hero-circle-04.svg"
+          width={2219.67}
+        />
         <svg
           aria-hidden="true"
           className="hero-workflow__lines"
