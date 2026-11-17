@@ -333,8 +333,9 @@
   animation-delay: 790ms;
 }
 .hero-node:nth-child(6) {
-  top: 52%;
-  left: 0;
+  top: calc(var(--hero-card-center-y) - var(--space-12));
+  left: 50%;
+  transform: translate(-50%, -100%);
   animation-delay: 850ms;
 }
 
