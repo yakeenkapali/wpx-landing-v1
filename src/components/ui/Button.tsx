@@ -22,7 +22,7 @@ export function Button({
 
   return (
     <a
-      className={`inline-flex min-h-12 items-center justify-center rounded-[var(--radius-sm)] px-4 py-2 text-small font-medium transition-colors duration-[var(--dur-fast)] ${variantClass} ${className}`.trim()}
+      className={`inline-flex min-h-8 items-center justify-center rounded-[var(--radius-sm)] px-4 py-2 text-small font-medium transition-colors duration-[var(--dur-fast)] ${variantClass} ${className}`.trim()}
       {...props}
     >
       {children}

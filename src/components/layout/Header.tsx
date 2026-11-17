@@ -23,7 +23,7 @@ export function Header() {
               height={48}
               priority
               src="/workplanx-logo-full.svg"
-              width={254}
+              width={180}
             />
           </a>
           <nav
@@ -44,10 +44,10 @@ export function Header() {
               {content.capabilityStatement.label}
               <Download aria-hidden="true" size={16} strokeWidth={1.5} />
             </a>
+            <LoginDropdown id="desktop-login-options" />
             <Button className="min-h-11" href={content.contact.href}>
               {content.contact.label}
             </Button>
-            <LoginDropdown id="desktop-login-options" />
           </nav>
           <MobileMenu />
         </div>
