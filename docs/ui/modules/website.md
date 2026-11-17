@@ -4,22 +4,24 @@ Updated: 2026-11-17
 
 Screens: WorkPlanX landing page (`src/app/page.tsx`); shared site shell (`src/app/layout.tsx`).
 
-## Current foundation
+## Landing page
 
-P02 establishes the initial website shell. The root layout supplies the header, main landmark, and footer (`src/app/layout.tsx:15-30`); the home page composes Hero, Trust Strip, Product & Solutions, Access Points, and CTA sections in that order (`src/app/page.tsx:7-15`). At this stage these sections render their headings rather than their full screen content; for example, the CTA renders a heading only (`src/components/sections/CtaBand.tsx:5-20`). Existing screens and the contact flow remain unrendered, not deleted.
+The home page renders Hero, Trust Strip, Product & Solutions, Access Points, then the contact CTA (`src/app/page.tsx:7-15`). The shared layout sets page metadata from `siteContent.seo` and supplies the skip link, header, main landmark, and footer (`src/app/layout.tsx:10-30`). Section copy, navigation labels and destinations, SEO text, card IDs, and form messages are static in `siteContent` (`src/content/site.ts:11-126`). Illustrative screen data is held separately in `sampleData` (`src/content/sample-data.ts:1-112`).
 
-## Navigation and content rules
+Product & Solutions renders the five configured cards by ID-to-visual mapping and adds waste management as a separate card (`src/components/sections/ProductSolutions.tsx:12-18`, `37-73`). Access Points maps its configured Admin Portal, Mobile App, and Customer Portal cards (`src/components/sections/AccessPoints.tsx:21-37`). These visuals use illustrative sample data rather than live product data; the section captions explicitly identify them as illustrative (`src/content/site.ts:31`, `47`, `87`; `src/content/sample-data.ts:1-112`).
 
-- Site copy, labels, navigation destinations, and SEO text are held in the static `siteContent` object (`src/content/site.ts:1-53`).
-- Solutions and Contact us navigate to `#solutions` and `#contact`; the capability statement links to the supplied PDF, while both portal destinations are null and shown as unavailable (`src/content/site.ts:11-23`).
-- The mobile navigation opens and closes with local state; Escape closes it and restores focus to the toggle (`src/components/layout/MobileMenu.tsx:9-25`). The login menu closes on blur or Escape, and unavailable portal destinations are not links (`src/components/layout/LoginDropdown.tsx:10-24`, `37-60`).
-- The current CTA section has no contact form or submission behavior (`src/components/sections/CtaBand.tsx:5-20`).
+## Navigation and form behavior
+
+- Solutions and contact links target `#solutions` and `#contact`; the capability statement targets the supplied PDF. Admin and Customer Portal destinations are `null` and shown as unavailable rather than as links (`src/content/site.ts:11-23`; `src/components/layout/LoginDropdown.tsx:46-63`).
+- The mobile menu toggles with local state; Escape closes it and restores focus to the toggle (`src/components/layout/MobileMenu.tsx:9-25`, `28-51`). The login dropdown closes on blur or Escape (`src/components/layout/LoginDropdown.tsx:19-29`).
+- The contact form collects name, email, company, and message. It requires non-blank name, company, and message values and checks email against a basic address pattern. Invalid submission shows field errors and focuses the first invalid field; editing a field clears its error and any submitted status (`src/components/sections/ContactForm.tsx:6-15`, `24-47`, `58-100`).
+- A valid submission displays the configured “not connected” status; there is no message delivery behavior (`src/components/sections/ContactForm.tsx:32-40`, `104-110`; `src/content/site.ts:111-124`).
+- Reveal behavior is enhanced only when reduced motion is not requested and `IntersectionObserver` is available. With the default `once` setting, an element is unobserved after it enters view; non-once solution cards stay observed (`src/lib/useInView.ts:5-31`; `src/components/sections/ProductSolutions.tsx:40-45`, `58-62`).
 
 ## Open questions
 
-- Which existing screens and contact-flow content should be rendered in subsequent work is not specified by this shell.
-- The contact delivery destination and portal login URLs remain to be supplied; the website layout notes these as build prerequisites (`docs/website_layout.md:141-148`).
+- The contact form delivery destination and Admin/Customer Portal login URLs remain to be supplied (`src/components/sections/ContactForm.tsx:104-110`; `src/content/site.ts:18-23`).
 
 ## Documentation note
 
-`docs/ui/project.md` and `docs/ui/modules/_template.md` were absent when this module was documented, so this concise module structure was created directly.
+`docs/ui/project.md` and `docs/ui/modules/_template.md` were absent when this module was documented. No standalone token or component registry files were present under `design-system/`; the landing page styles are in `src/app/globals.css`.
