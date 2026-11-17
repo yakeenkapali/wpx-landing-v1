@@ -13,6 +13,7 @@ Product & Solutions renders the five configured cards by ID-to-visual mapping an
 ## Navigation and form behavior
 
 - Solutions and contact links target `#solutions` and `#contact`; the capability statement targets the supplied PDF. Admin and Customer Portal destinations are `null` and shown as unavailable rather than as links (`src/content/site.ts:11-23`; `src/components/layout/LoginDropdown.tsx:46-63`).
+- The sticky header is transparent at the top of the page and gains its background, divider, and subtle shadow after scrolling; keyboard focus within the header also reveals that surface (`src/components/layout/Header.tsx`).
 - The mobile menu toggles with local state; Escape closes it and restores focus to the toggle (`src/components/layout/MobileMenu.tsx:9-25`, `28-51`). The login dropdown closes on blur or Escape (`src/components/layout/LoginDropdown.tsx:19-29`).
 - The contact form collects name, email, company, and message. It requires non-blank name, company, and message values and checks email against a basic address pattern. Invalid submission shows field errors and focuses the first invalid field; editing a field clears its error and any submitted status (`src/components/sections/ContactForm.tsx:6-15`, `24-47`, `58-100`).
 - A valid submission displays the configured “not connected” status; there is no message delivery behavior (`src/components/sections/ContactForm.tsx:32-40`, `104-110`; `src/content/site.ts:111-124`).
