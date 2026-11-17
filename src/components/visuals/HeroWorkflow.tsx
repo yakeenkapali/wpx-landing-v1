@@ -65,7 +65,7 @@ export function HeroWorkflow() {
           preserveAspectRatio="none"
           viewBox="0 0 600 410"
         >
-          <path d="M300 0 45-60M300 0 555-60M300 0 45 200M300 0 555 200M300 0V260M300 0 45 98M300 0V-123" />
+          <path d="M300 0 45-60M300 0 555-60M300 0 45 200M300 0 555 200M300 0V260M300 0V-123" />
         </svg>
         <div className="hero-workflow__panel">
           <div className="hero-workflow__customer">
