@@ -4,7 +4,6 @@ import { siteContent } from "@/content/site";
 export function Proof() {
   const content = siteContent.proof;
   if (
-    (content.logos.length === 0 && content.testimonials.length === 0) ||
     !content.logos.every((logo) => logo.real) ||
     !content.testimonials.every((testimonial) => testimonial.real)
   ) {
@@ -15,6 +14,7 @@ export function Proof() {
     <section className="proof-section section-pad" aria-labelledby="proof-title">
       <div className="content-width">
         <h2 id="proof-title">{content.heading}</h2>
+        <p className="proof-lead">{content.description}</p>
         {content.logos.length > 0 ? (
           <ul className="proof-logos" aria-label={siteContent.accessibility.customerLogos}>
             {content.logos.map((logo) => (
@@ -28,6 +28,14 @@ export function Proof() {
               </li>
             ))}
           </ul>
+        ) : null}
+        {content.logos.length === 0 && content.testimonials.length === 0 ? (
+          <div className="proof-journey" aria-label="WorkPlanX project workflow">
+            <span>Project set-up</span>
+            <span>Site records</span>
+            <span>Pay &amp; bill</span>
+            <span>Customer access</span>
+          </div>
         ) : null}
         {content.testimonials.length > 0 ? (
           <div className="proof-testimonials">
@@ -43,6 +51,7 @@ export function Proof() {
             ))}
           </div>
         ) : null}
+        <p className="proof-integration">{content.integration}</p>
       </div>
     </section>
   );

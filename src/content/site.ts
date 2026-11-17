@@ -24,8 +24,6 @@ export const siteContent = {
     footerNavigation: "Footer navigation",
     productTabs: "WorkPlanX product workflows",
     customerLogos: "Customer logos",
-    productScreenshotNote: "Approved product screenshot not supplied",
-    screenshotCaption: "Screenshots pending approved product captures",
     brandName: "WorkPlanX",
     logoAlt: "WorkPlanX",
     menuOpen: "Open navigation menu",
@@ -48,21 +46,28 @@ export const siteContent = {
     loginDestinationPending: "Login destination not yet supplied",
   },
   hero: {
-    headline: "One platform for your entire project lifecycle.",
+    headline: "One platform for the project lifecycle.",
     subheadline:
-      "Plan crews, capture site work, manage waste, run payroll and invoice in one connected workflow.",
+      "Connect workforce, site reporting, resource recovery, payroll, invoicing and customer access in one operational workflow.",
     contactLabel: "Contact us",
     secondaryLabel: "See how it works",
     secondaryHref: "#how-it-works",
     trustLine:
       "Built for labour-based, site-delivered services, with waste and resource recovery at its core.",
-    image: {
-      src: "/images/screens/roster.png",
-      alt: "WorkPlanX roster product screen",
-      width: 1440,
-      height: 900,
-      placeholder: "Roster product screenshot",
-      available: false,
+    visual: {
+      eyebrow: "ONE PROJECT RECORD",
+      source: {
+        title: "The project",
+        detail: "People · site · scope",
+      },
+      branches: [
+        { title: "Field reporting", detail: "Hours · dockets · reports", icon: "report" },
+        { title: "Resource recovery", detail: "Weighing · classification", icon: "recovery" },
+        { title: "Payroll", detail: "Timesheets · pay runs", icon: "payroll" },
+        { title: "Invoicing + Xero", detail: "Claims · dockets · sync", icon: "invoice" },
+        { title: "Customer access", detail: "Projects · sign-off", icon: "portal" },
+      ],
+      caption: "Illustrative workflow · not a product screenshot",
     },
   },
   problemStrip: {
@@ -104,20 +109,20 @@ export const siteContent = {
     ],
   },
   showcase: {
-    heading: "A connected view of the work.",
+    heading: "Follow the work through the whole project.",
     tabs: [
       {
         id: "roster",
         label: "Roster and tasks",
         title: "Plan the day: people, vehicles, sites.",
         bullets: ["Daily crew plans", "Vehicle and fleet allocation"],
-        image: {
-          src: "/images/screens/roster.png",
-          alt: "WorkPlanX roster and tasks screen",
-          width: 1440,
-          height: 900,
-          placeholder: "Roster screenshot",
-          available: false,
+        visual: {
+          source: { title: "Plan the day", detail: "A project starts with people, vehicles and sites." },
+          steps: [
+            { title: "People", detail: "Set up the workforce", icon: "people" },
+            { title: "Vehicles", detail: "Allocate the fleet", icon: "vehicle" },
+            { title: "Sites", detail: "Assign the work", icon: "site" },
+          ],
         },
       },
       {
@@ -125,13 +130,13 @@ export const siteContent = {
         label: "Daily reports",
         title: "Hours and tonnes recorded once, used everywhere.",
         bullets: ["Project Daily Report", "Dockets and field records"],
-        image: {
-          src: "/images/screens/project-daily-report.png",
-          alt: "WorkPlanX Project Daily Report screen",
-          width: 1440,
-          height: 900,
-          placeholder: "Project Daily Report screenshot",
-          available: false,
+        visual: {
+          source: { title: "Capture on site", detail: "Field records carry the day's work forward." },
+          steps: [
+            { title: "Hours", detail: "Time on the job", icon: "report" },
+            { title: "Dockets", detail: "Work recorded", icon: "document" },
+            { title: "Daily report", detail: "Site activity", icon: "report" },
+          ],
         },
       },
       {
@@ -140,37 +145,27 @@ export const siteContent = {
         title:
           "See recycling and recovery reporting by project, customer and workspace.",
         bullets: ["Weigh Scale capture", "Resource Recovery Reports"],
-        images: [
-          {
-            src: "/images/screens/weigh-scale.png",
-            alt: "WorkPlanX Weigh Scale screen",
-            width: 1440,
-            height: 900,
-            placeholder: "Weigh Scale screenshot",
-            available: false,
-          },
-          {
-            src: "/images/screens/resource-recovery-report.png",
-            alt: "WorkPlanX Resource Recovery Report screen",
-            width: 1440,
-            height: 900,
-            placeholder: "Resource Recovery Report screenshot",
-            available: false,
-          },
-        ],
+        visual: {
+          source: { title: "Track material", detail: "Waste records connect to project reporting." },
+          steps: [
+            { title: "Weigh", detail: "Capture the load", icon: "recovery" },
+            { title: "Classify", detail: "Record the material", icon: "document" },
+            { title: "Report", detail: "View recovery by project", icon: "report" },
+          ],
+        },
       },
       {
         id: "payroll",
         label: "Payroll",
         title: "Award-based loadings and penalty rates applied automatically.",
         bullets: ["Timesheets and approvals", "Weekly or fortnightly pay runs"],
-        image: {
-          src: "/images/screens/payroll.png",
-          alt: "WorkPlanX payroll screen",
-          width: 1440,
-          height: 900,
-          placeholder: "Payroll screenshot",
-          available: false,
+        visual: {
+          source: { title: "Work recorded", detail: "Hours move from site activity to payroll." },
+          steps: [
+            { title: "Hours", detail: "Recorded in the field", icon: "report" },
+            { title: "Timesheets", detail: "Reviewed and approved", icon: "document" },
+            { title: "Pay run", detail: "Weekly or fortnightly", icon: "payroll" },
+          ],
         },
       },
       {
@@ -178,13 +173,13 @@ export const siteContent = {
         label: "Invoicing and Xero",
         title: "Bill from claims or dockets. Sync with Xero both ways.",
         bullets: ["Contract Invoice", "Docket Invoice", "Xero invoice sync"],
-        image: {
-          src: "/images/screens/contract-invoice.png",
-          alt: "WorkPlanX Contract Invoice screen",
-          width: 1440,
-          height: 900,
-          placeholder: "Contract Invoice screenshot",
-          available: false,
+        visual: {
+          source: { title: "Work completed", detail: "Build invoices from claims or dockets." },
+          steps: [
+            { title: "Claims", detail: "Contract work", icon: "document" },
+            { title: "Invoices", detail: "Bill from project records", icon: "invoice" },
+            { title: "Xero", detail: "Invoice sync", icon: "portal" },
+          ],
         },
       },
     ],
@@ -199,13 +194,9 @@ export const siteContent = {
         title: "Web — Admin Portal",
         audience: "For office teams and managers",
         highlights: "Projects, rostering, reports, payroll and invoicing.",
-        image: {
-          src: "/images/screens/admin-portal.png",
-          alt: "WorkPlanX Admin Portal screen",
-          width: 1200,
-          height: 800,
-          placeholder: "Admin Portal screenshot",
-          available: false,
+        visual: {
+          label: "WEB WORKSPACE",
+          nodes: ["Projects", "Rostering", "Payroll", "Invoicing"],
         },
       },
       {
@@ -213,13 +204,9 @@ export const siteContent = {
         title: "Mobile App",
         audience: "For field workers and drivers",
         highlights: "Shifts, hours, daily reports, weigh tickets and photos.",
-        image: {
-          src: "/images/screens/mobile-app.png",
-          alt: "WorkPlanX Mobile App screen",
-          width: 390,
-          height: 844,
-          placeholder: "Mobile App screenshot",
-          available: false,
+        visual: {
+          label: "FIELD WORKFLOW",
+          nodes: ["Shift", "Hours", "Daily report", "Weigh ticket"],
         },
       },
       {
@@ -227,20 +214,19 @@ export const siteContent = {
         title: "Customer Portal",
         audience: "For clients",
         highlights: "Projects, docket sign-off, waste performance and invoices.",
-        image: {
-          src: "/images/screens/customer-portal-dashboard.png",
-          alt: "WorkPlanX Customer Portal dashboard screen",
-          width: 1200,
-          height: 800,
-          placeholder: "Customer Portal dashboard screenshot",
-          available: false,
+        visual: {
+          label: "CUSTOMER ACCESS",
+          nodes: ["Projects", "Dockets", "Recovery", "Invoices"],
         },
       },
     ],
     integration: "Integrates with Xero.",
   },
   proof: {
-    heading: "Trusted by teams doing the work.",
+    heading: "The project record stays in view.",
+    description:
+      "Follow work from the crew plan and site records through reporting, payroll, invoicing and customer access.",
+    integration: "Xero integration for invoice sync.",
     logos: proofLogos,
     testimonials: proofTestimonials,
   },

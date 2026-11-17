@@ -1,7 +1,7 @@
 import { siteContent } from "@/content/site";
 import { ContactLink } from "@/components/ui/ContactLink";
-import { ProductScreen } from "@/components/ui/ProductScreen";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
+import { WorkflowIllustration } from "@/components/ui/WorkflowIllustration";
 
 export function Hero() {
   const content = siteContent.hero;
@@ -23,13 +23,16 @@ export function Hero() {
         <p className="hero__trust">{content.trustLine}</p>
       </div>
 
-      <div className="hero__screen-column">
-        <ProductScreen
-          image={content.image}
-          className="hero__main-screen"
-          priority
+      <div className="hero__visual-column">
+        <WorkflowIllustration
+          className="hero__workflow"
+          label={content.visual.eyebrow}
+          source={content.visual.source}
+          nodes={content.visual.branches}
         />
-        <p className="hero__screen-caption">{siteContent.accessibility.screenshotCaption}</p>
+        <p className="hero__visual-caption">
+          <span aria-hidden="true">↳</span> {content.visual.caption}
+        </p>
       </div>
     </section>
   );

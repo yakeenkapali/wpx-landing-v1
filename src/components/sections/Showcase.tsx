@@ -3,14 +3,12 @@
 import { useEffect, useState } from "react";
 import { siteContent } from "@/content/site";
 import { ContactLink } from "@/components/ui/ContactLink";
-import { ProductScreen } from "@/components/ui/ProductScreen";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowIcon } from "@/components/ui/ArrowIcon";
 
 export function Showcase() {
   const content = siteContent.showcase;
   const [activeId, setActiveId] = useState<string>(content.tabs[0].id);
-  const activeTab = content.tabs.find((tab) => tab.id === activeId) ?? content.tabs[0];
 
   useEffect(() => {
     function syncTabFromUrl() {
@@ -88,6 +86,7 @@ export function Showcase() {
                 className={`showcase-tabs__tab${activeId === tab.id ? " is-active" : ""}`}
                 id={getTabId(tab.id)}
                 key={tab.id}
+                aria-label={tab.label}
                 onClick={() => selectTab(tab.id)}
                 onKeyDown={(event) => handleKeyDown(event, index)}
                 role="tab"
@@ -100,43 +99,58 @@ export function Showcase() {
             ))}
           </div>
 
-          <div
-            aria-labelledby={getTabId(activeTab.id)}
-            className="showcase-panel"
-            id={getPanelId(activeTab.id)}
-            role="tabpanel"
-            tabIndex={0}
-          >
-            <div className="showcase-panel__image" key={activeTab.id}>
-              {"images" in activeTab ? (
-                <div className="showcase-panel__split-images">
-                  {activeTab.images.map((image) => (
-                    <ProductScreen
-                      className="showcase-panel__screen"
-                      image={image}
-                      key={image.src}
-                    />
-                  ))}
-                </div>
-              ) : (
-                <ProductScreen
-                  className="showcase-panel__screen"
-                  image={activeTab.image}
-                />
-              )}
-            </div>
-            <div className="showcase-panel__copy">
-              <div>
-                <span className="showcase-panel__label">{activeTab.label}</span>
-                <h3>{activeTab.title}</h3>
+          {content.tabs.map((tab) => (
+            <div
+              aria-labelledby={getTabId(tab.id)}
+              className="showcase-panel"
+              hidden={activeId !== tab.id}
+              id={getPanelId(tab.id)}
+              key={tab.id}
+              role="tabpanel"
+              tabIndex={0}
+            >
+              <div className="showcase-panel__image">
+                <figure className="showcase-workflow">
+                  <figcaption>
+                    <span className="workflow-illustration__label-mark" aria-hidden="true" />
+                    Illustrative workflow · not a product screenshot
+                  </figcaption>
+                  <div className="showcase-workflow__source">
+                    <span className="showcase-workflow__step" aria-hidden="true">01</span>
+                    <div>
+                      <p className="showcase-workflow__title">{tab.visual.source.title}</p>
+                      <p>{tab.visual.source.detail}</p>
+                    </div>
+                  </div>
+                  <ol className="showcase-workflow__steps">
+                    {tab.visual.steps.map((step, index) => (
+                      <li key={`${step.title}-${index}`}>
+                        <span className="showcase-workflow__step" aria-hidden="true">
+                          {String(index + 2).padStart(2, "0")}
+                        </span>
+                        <div>
+                          <p className="showcase-workflow__title">{step.title}</p>
+                          <p>{step.detail}</p>
+                        </div>
+                        <span className="showcase-workflow__endpoint" aria-hidden="true" />
+                      </li>
+                    ))}
+                  </ol>
+                </figure>
               </div>
-              <ul>
-                {activeTab.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-              </ul>
+              <div className="showcase-panel__copy">
+                <div>
+                  <span className="showcase-panel__label">{tab.label}</span>
+                  <h3>{tab.title}</h3>
+                </div>
+                <ul>
+                  {tab.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
 
         <div className="showcase-cta">
