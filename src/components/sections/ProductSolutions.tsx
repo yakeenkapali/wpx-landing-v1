@@ -1,6 +1,7 @@
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { siteContent } from "@/content/site";
+import { InvoiceVisual } from "@/components/visuals/InvoiceVisual";
 import { PayrollVisual } from "@/components/visuals/PayrollVisual";
 import { ProjectsVisual } from "@/components/visuals/ProjectsVisual";
 import { RecoveryVisual } from "@/components/visuals/RecoveryVisual";
@@ -12,6 +13,7 @@ const visuals = {
   roster: RosterVisual,
   reports: ReportVisual,
   payroll: PayrollVisual,
+  invoicing: InvoiceVisual,
   projects: ProjectsVisual,
 } as const;
 
