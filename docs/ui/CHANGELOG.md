@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P17 (`ui/p02-foundation`): hid the entire Trust Strip from the landing page while retaining its component and all configured facts for later restoration. Files: `src/app/page.tsx`, `src/content/site.ts`, `src/components/sections/TrustStrip.tsx`, `docs/ui/modules/website.md`.
 - 2026-11-17 — P16 (`ui/p02-foundation`): hid the Invoicing and Xero solution card plus the Xero invoice sync and full audit trail trust facts, retaining their source visual/data for later restoration. Files: `src/content/site.ts`, `src/components/sections/ProductSolutions.tsx`, `src/components/sections/TrustStrip.tsx`, `docs/ui/modules/website.md`.
 - 2026-11-17 — P15 (`ui/p02-foundation`): moved the mobile hero workflow caption below its pills and improved capability-statement link contrast on the dark contact section. Files: `src/app/globals.css`.
 - 2026-11-17 — P14 (`ui/p02-foundation`): matched the hero Contact Us button height to the navigation button. Files: `src/components/sections/Hero.tsx`.
