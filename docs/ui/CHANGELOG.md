@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P24 (`ui/hero-project-card`): added an upward dashed SVG connector from the project-card center to the Roster node above it. Files: `src/components/visuals/HeroWorkflow.tsx`, `src/app/globals.css`, `docs/ui/modules/website.md`.
 - 2026-11-17 — P23 (`ui/hero-project-card`): positioned the Roster node centered above the hero project card. Files: `src/app/globals.css`.
 - 2026-11-17 — P22 (`ui/hero-project-card`): replaced the raster connector image with six dashed SVG arms meeting at the project-card center and added the Roster node. Files: `src/components/visuals/HeroWorkflow.tsx`, `src/content/sample-data.ts`, `src/app/globals.css`, `public/hero/hero-connectors.png` (removed), `docs/ui/modules/website.md`.
 - 2026-11-17 — P21 (`ui/hero-project-card`): replaced the hand-drawn hero connector rays with the Figma connector artwork, preserving its proportion and placement behind the card. Files: `src/components/visuals/HeroWorkflow.tsx`, `src/app/globals.css`, `public/hero/hero-connectors.png`, `docs/ui/modules/website.md`.
