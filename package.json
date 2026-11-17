@@ -7,9 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\" package.json tsconfig.json next.config.ts eslint.config.mjs postcss.config.mjs .prettierrc.json"
   },
   "dependencies": {
+    "lucide-react": "^1.73.0",
     "next": "16.4.3",
     "react": "19.3.1",
     "react-dom": "19.3.1"
@@ -21,6 +23,7 @@
     "@types/react-dom": "19.3.0",
     "eslint": "9.39.5",
     "eslint-config-next": "16.4.3",
+    "prettier": "^3.10.1",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3"
   }
