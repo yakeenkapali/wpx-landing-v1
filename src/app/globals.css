@@ -86,36 +86,11 @@
 .hero-section {
   position: relative;
   z-index: 1;
+  overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
   padding: calc(clamp(var(--space-24), 11vw, var(--space-32)) + var(--space-4))
     0 calc(var(--space-32) + var(--space-4));
-}
-
-.hero-section__art {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.hero-section__art svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.hero-section__art svg defs path {
-  fill: none;
-  stroke: color-mix(in srgb, var(--primary) 8%, transparent);
-  stroke-width: 1;
-}
-
-.hero-section__art circle {
-  fill: none;
-  stroke: color-mix(in srgb, var(--primary) 10%, transparent);
-  stroke-width: 1;
 }
 
 .hero-section__layout {
@@ -171,6 +146,8 @@
 }
 
 .hero-workflow {
+  --hero-card-center-y: 28%;
+
   position: relative;
   width: 100%;
   min-width: 0;
@@ -184,12 +161,60 @@
   inset: 0;
 }
 
+.hero-workflow__circle {
+  position: absolute;
+  top: var(--hero-card-center-y);
+  left: 50%;
+  z-index: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-workflow__circle--1 {
+  width: 44.965vw;
+}
+
+.hero-workflow__circle--2 {
+  width: 68.918vw;
+}
+
+.hero-workflow__circle--3 {
+  width: 92.872vw;
+}
+
+.hero-workflow__circle--4 {
+  width: 116.825vw;
+}
+
 .hero-workflow__lines {
   position: absolute;
+  z-index: 1;
   inset: 0;
   width: 100%;
   height: 100%;
   overflow: visible;
+}
+
+.hero-workflow__connectors {
+  position: absolute;
+  z-index: 1;
+  top: var(--hero-card-center-y);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-workflow__connectors > path {
+  fill: none;
+  stroke: var(--primary);
+  stroke-dasharray: 8 9;
+  stroke-opacity: 0.8;
+  stroke-width: 1.5;
 }
 
 .hero-workflow__lines defs path {
@@ -198,29 +223,16 @@
   stroke-width: 1;
 }
 
-.hero-workflow__lines > path {
-  fill: none;
-  stroke: color-mix(in srgb, var(--primary) 38%, transparent);
-  stroke-width: 1.5;
-  stroke-dasharray: 420;
-  stroke-dashoffset: 0;
-}
-
-.hero-workflow[data-enhanced="true"][data-visible="true"]
-  .hero-workflow__lines
-  > path {
-  stroke-dashoffset: 420;
-  animation: hero-connect 900ms var(--ease-out) 200ms forwards;
-}
-
 .hero-workflow__panel {
   position: absolute;
   z-index: 2;
-  top: 28%;
+  top: var(--hero-card-center-y);
   left: 50%;
   width: min(52%, 19rem);
-  min-height: 10.5rem;
-  padding: var(--space-6);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   transform: translate(-50%, -50%);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -229,7 +241,6 @@
   color: var(--foreground);
 }
 
-.hero-workflow__eyebrow,
 .ui-kicker {
   display: block;
   color: var(--muted-fg);
@@ -239,39 +250,38 @@
   text-transform: uppercase;
 }
 
+.hero-workflow__customer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--foreground);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: normal;
+}
+
+.hero-workflow__avatar {
+  flex: 0 0 auto;
+  border-radius: var(--radius-full);
+}
+
 .hero-workflow__panel h2 {
-  margin: var(--space-2) 0 0;
-  font-size: var(--fs-title);
-  line-height: var(--lh-title);
+  margin: 0;
+  font-size: var(--fs-subtitle);
+  line-height: var(--lh-subtitle);
   letter-spacing: var(--ls-headline);
 }
 
 .hero-workflow__panel p {
-  margin: var(--space-1) 0 var(--space-4);
-  color: var(--muted-fg);
-  font-size: var(--fs-small);
-}
-
-.hero-workflow__record-line {
-  height: 1px;
-  background: var(--border);
-}
-
-.hero-workflow__record-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: var(--space-3);
+  margin: 0;
   color: var(--muted-fg);
   font-size: var(--fs-caption);
-}
-
-.hero-workflow__record-meta svg {
-  color: var(--success);
+  line-height: var(--lh-caption);
 }
 
 .hero-workflow__nodes {
   position: absolute;
+  z-index: 3;
   inset: 0;
 }
 
@@ -321,6 +331,12 @@
   left: 50%;
   transform: translateX(-50%);
   animation-delay: 790ms;
+}
+.hero-node:nth-child(6) {
+  top: calc(var(--hero-card-center-y) - 30%);
+  left: 50%;
+  transform: translate(-50%, -100%);
+  animation-delay: 850ms;
 }
 
 .hero-node__dot {
@@ -1731,11 +1747,6 @@
   animation: none;
 }
 
-@keyframes hero-connect {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 @keyframes hero-node-in {
   from {
     opacity: 0;
@@ -2040,10 +2051,6 @@
   }
   .hero-workflow__panel {
     width: 52%;
-    padding: var(--space-4);
-  }
-  .hero-workflow__panel h2 {
-    font-size: var(--fs-subtitle);
   }
   .hero-node {
     min-height: 32px;
@@ -2164,9 +2171,8 @@
     max-width: 42%;
     text-align: right;
   }
-  .hero-workflow__panel {
-    top: 29%;
-    min-height: 9rem;
+  .hero-workflow {
+    --hero-card-center-y: 29%;
   }
   .roster-grid__person {
     gap: var(--space-1);
@@ -2228,11 +2234,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-workflow__lines > path {
-    stroke-dashoffset: 0;
-    animation: none;
-  }
-
   .hero-workflow .hero-node {
     opacity: 1;
     animation: none;

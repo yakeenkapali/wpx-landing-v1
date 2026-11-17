@@ -7,18 +7,6 @@ import { HeroWorkflow } from "@/components/visuals/HeroWorkflow";
 export function Hero() {
   return (
     <section aria-labelledby="hero-title" className="hero-section" id="top">
-      <div aria-hidden="true" className="hero-section__art">
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 900 700"
-          preserveAspectRatio="xMidYMid slice"
-        >
-          <circle cx="675" cy="350" r="150" />
-          <circle cx="675" cy="350" r="230" />
-          <circle cx="675" cy="350" r="310" />
-          <circle cx="675" cy="350" r="390" />
-        </svg>
-      </div>
       <Container>
         <div className="hero-section__layout">
           <div className="hero-section__copy">

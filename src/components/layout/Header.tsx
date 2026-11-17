@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
@@ -7,10 +10,21 @@ import { MobileMenu } from "@/components/layout/MobileMenu";
 import { siteContent } from "@/content/site";
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const content = siteContent.navigation;
 
+  useEffect(() => {
+    function updateScrollState() {
+      setIsScrolled(window.scrollY > 0);
+    }
+
+    updateScrollState();
+    window.addEventListener("scroll", updateScrollState, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrollState);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-20 border-b border-border bg-background">
+    <header className={`sticky top-0 z-20 border-b transition-[background-color,border-color,box-shadow] duration-[var(--dur-fast)] ${isScrolled ? "border-border bg-background shadow-[var(--shadow-subtle)]" : "border-transparent bg-transparent shadow-none"} focus-within:border-border focus-within:bg-background focus-within:shadow-[var(--shadow-subtle)]`}>
       <Container>
         <div className="relative flex min-h-16 items-center justify-between gap-4">
           <a
