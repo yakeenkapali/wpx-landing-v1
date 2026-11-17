@@ -45,7 +45,7 @@ export function HeroWorkflow() {
         <svg
           aria-hidden="true"
           className="hero-workflow__lines"
-          viewBox="0 0 600 390"
+          viewBox="0 0 600 410"
         >
           <defs>
             <pattern
@@ -57,16 +57,16 @@ export function HeroWorkflow() {
               <path d="M32 0H0V32" />
             </pattern>
           </defs>
-          <rect height="390" width="600" fill="url(#hero-grid)" />
+          <rect height="410" width="600" fill="url(#hero-grid)" />
         </svg>
-        <Image
-          alt=""
+        <svg
           aria-hidden="true"
           className="hero-workflow__connectors"
-          height={278.573}
-          src="/hero/hero-connectors.png"
-          width={442.415}
-        />
+          preserveAspectRatio="none"
+          viewBox="0 0 600 410"
+        >
+          <path d="M300 0 45-60M300 0 555-60M300 0 45 200M300 0 555 200M300 0V260M300 0 45 98" />
+        </svg>
         <div className="hero-workflow__panel">
           <div className="hero-workflow__customer">
             <Image

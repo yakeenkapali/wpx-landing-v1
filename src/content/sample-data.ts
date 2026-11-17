@@ -49,6 +49,7 @@ export const sampleData = {
       "Payroll",
       "Invoicing",
       "Customer access",
+      "Roster",
     ],
   },
   roster: {

@@ -198,21 +198,29 @@
   overflow: visible;
 }
 
+.hero-workflow__connectors {
+  position: absolute;
+  z-index: 1;
+  top: var(--hero-card-center-y);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-workflow__connectors > path {
+  fill: none;
+  stroke: var(--primary);
+  stroke-dasharray: 8 9;
+  stroke-opacity: 0.8;
+  stroke-width: 1.5;
+}
+
 .hero-workflow__lines defs path {
   fill: none;
   stroke: color-mix(in srgb, var(--primary) 8%, transparent);
   stroke-width: 1;
-}
-
-.hero-workflow__connectors {
-  position: absolute;
-  z-index: 1;
-  top: 24.88%;
-  left: 15.83%;
-  width: 68.34%;
-  height: auto;
-  max-width: none;
-  pointer-events: none;
 }
 
 .hero-workflow__panel {
@@ -273,6 +281,7 @@
 
 .hero-workflow__nodes {
   position: absolute;
+  z-index: 3;
   inset: 0;
 }
 
@@ -322,6 +331,11 @@
   left: 50%;
   transform: translateX(-50%);
   animation-delay: 790ms;
+}
+.hero-node:nth-child(6) {
+  top: 52%;
+  left: 0;
+  animation-delay: 850ms;
 }
 
 .hero-node__dot {
