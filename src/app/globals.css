@@ -88,7 +88,8 @@
   z-index: 1;
   background: var(--background);
   color: var(--foreground);
-  padding: clamp(var(--space-24), 11vw, var(--space-32)) 0 var(--space-32);
+  padding: calc(clamp(var(--space-24), 11vw, var(--space-32)) + var(--space-4))
+    0 calc(var(--space-32) + var(--space-4));
 }
 
 .hero-section__art {
@@ -2012,7 +2013,8 @@
   }
 
   .hero-section {
-    padding: var(--space-24) 0 var(--space-32);
+    padding: calc(var(--space-24) + var(--space-4)) 0
+      calc(var(--space-32) + var(--space-4));
   }
   .hero-section__layout {
     grid-template-columns: minmax(0, 1fr);
