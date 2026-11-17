@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P07 (`ui/p02-foundation`): slightly reduced the shared headline scale used by section headings and synchronized `design-system/DESIGN.md`. Files: `src/styles/tokens.css`, `design-system/DESIGN.md`.
 - 2026-11-17 — P06 (`ui/p02-foundation`): further reduced display, headline, title, subtitle and lead typography and synchronized the documented type scale; body, small and caption sizes remain unchanged. Files: `src/styles/tokens.css`, `src/app/globals.css`, `design-system/DESIGN.md`.
 - 2026-11-17 — P05 (`ui/p02-foundation`): slightly reduced display, heading, title, subtitle and lead sizes while leaving body, small and caption text unchanged. Files: `src/styles/tokens.css`, `src/app/globals.css`.
 - 2026-11-17 — P04 (`ui/p02-foundation`): added the Clients section after Hero with its trust line and four existing client-logo assets, and placed Trust Strip below Product & Solutions. Files: `src/app/page.tsx`, `src/app/globals.css`, `src/content/site.ts`, `src/components/sections/ClientsSection.tsx`, `docs/ui/modules/website.md`, `docs/ui/CHANGELOG.md`. Module doc: `docs/ui/modules/website.md`.

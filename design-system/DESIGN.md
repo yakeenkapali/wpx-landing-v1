@@ -42,7 +42,7 @@ The single source of truth. Everything below refers to these names; no value is 
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
   --fs-display:  clamp(2rem, 4.6vw, 4.6rem);   --lh-display: 0.99;  --ls-display: -0.065em;
-  --fs-headline: clamp(1.75rem, 2.8vw, 2.8rem); --lh-headline: 1.06; --ls-headline: -0.055em;
+  --fs-headline: clamp(1.625rem, 2.5vw, 2.5rem); --lh-headline: 1.06; --ls-headline: -0.055em;
   --fs-title:    1.25rem;    --lh-title: 1.75rem;
   --fs-subtitle: 1.125rem;   --lh-subtitle: 1.5rem;
   --fs-lead:     1rem;       --lh-lead: 1.5rem;
