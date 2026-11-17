@@ -41,11 +41,11 @@ The single source of truth. Everything below refers to these names; no value is 
   /* Type */
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
-  --fs-display:  clamp(2.25rem, 5.9vw, 5.8rem);  --lh-display: 0.99;  --ls-display: -0.065em;
-  --fs-headline: clamp(2rem, 3.5vw, 3.45rem);    --lh-headline: 1.06; --ls-headline: -0.055em;
-  --fs-title:    1.5rem;    --lh-title: 2rem;
-  --fs-subtitle: 1.25rem;   --lh-subtitle: 1.75rem;
-  --fs-lead:     1.125rem;  --lh-lead: 1.75rem;
+  --fs-display:  clamp(2rem, 4.6vw, 4.6rem);   --lh-display: 0.99;  --ls-display: -0.065em;
+  --fs-headline: clamp(1.75rem, 2.8vw, 2.8rem); --lh-headline: 1.06; --ls-headline: -0.055em;
+  --fs-title:    1.25rem;    --lh-title: 1.75rem;
+  --fs-subtitle: 1.125rem;   --lh-subtitle: 1.5rem;
+  --fs-lead:     1rem;       --lh-lead: 1.5rem;
   --fs-body:     1rem;      --lh-body: 1.625rem;
   --fs-small:    0.875rem;  --lh-small: 1.25rem;
   --fs-caption:  0.75rem;   --lh-caption: 1rem;
