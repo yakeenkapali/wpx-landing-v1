@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P29 (`ui/nav-hover-state`): made the sticky header's background, divider and subtle shadow appear on hover or keyboard focus rather than by default. Files: `src/components/layout/Header.tsx`.
 - 2026-11-17 — P28 (`ui/hero-project-card`): lowered the peak opacity of all four hero circle gradients to 0.08 for a more visible reduction. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`.
 - 2026-11-17 — P27 (`ui/hero-project-card`): reduced the peak opacity of the four hero circle gradients by 8%. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`.
 - 2026-11-17 — P26 (`ui/hero-project-card`): removed the extra down-left dashed SVG arm from the hero connector artwork. Files: `src/components/visuals/HeroWorkflow.tsx`.

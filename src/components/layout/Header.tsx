@@ -10,7 +10,7 @@ export function Header() {
   const content = siteContent.navigation;
 
   return (
-    <header className="sticky top-0 z-20 border-b border-border bg-background">
+    <header className="sticky top-0 z-20 border-b border-transparent bg-transparent shadow-none transition-[background-color,border-color,box-shadow] duration-[var(--dur-fast)] hover:border-border hover:bg-background hover:shadow-[var(--shadow-subtle)] focus-within:border-border focus-within:bg-background focus-within:shadow-[var(--shadow-subtle)]">
       <Container>
         <div className="relative flex min-h-16 items-center justify-between gap-4">
           <a
