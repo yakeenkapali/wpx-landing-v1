@@ -88,7 +88,7 @@
   z-index: 1;
   background: var(--background);
   color: var(--foreground);
-  padding: clamp(var(--space-16), 9vw, var(--space-24)) 0 var(--space-24);
+  padding: clamp(var(--space-24), 11vw, var(--space-32)) 0 var(--space-32);
 }
 
 .hero-section__art {
@@ -2012,7 +2012,7 @@
   }
 
   .hero-section {
-    padding: var(--space-16) 0 var(--space-24);
+    padding: var(--space-24) 0 var(--space-32);
   }
   .hero-section__layout {
     grid-template-columns: minmax(0, 1fr);

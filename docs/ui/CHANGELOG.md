@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P10 (`ui/p02-foundation`): increased hero top and bottom spacing another step on desktop and mobile. Files: `src/app/globals.css`.
 - 2026-11-17 — P09 (`ui/p02-foundation`): increased hero vertical spacing on desktop and mobile using the existing spacing scale. Files: `src/app/globals.css`.
 - 2026-11-17 — P08 (`ui/p02-foundation`): changed the hero from a blue ground to the existing page background and updated text, CTA, and workflow decoration colors for contrast; updated the documented hero ground. Files: `src/components/sections/Hero.tsx`, `src/app/globals.css`, `design-system/DESIGN.md`.
 - 2026-11-17 — P07 (`ui/p02-foundation`): slightly reduced the shared headline scale used by section headings and synchronized `design-system/DESIGN.md`. Files: `src/styles/tokens.css`, `design-system/DESIGN.md`.
