@@ -1489,6 +1489,7 @@
 }
 .cta-download {
   min-height: 44px;
+  color: var(--on-primary);
 }
 
 .contact-form {
@@ -2062,7 +2063,7 @@
     right: 0;
   }
   .hero-workflow figcaption {
-    bottom: var(--space-2);
+    bottom: calc(-1 * var(--space-6));
   }
   .trust-section {
     padding: var(--space-6) 0;
