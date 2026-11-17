@@ -1,5 +1,6 @@
 # UI Changelog
 
+- 2026-11-17 — P28 (`ui/hero-project-card`): lowered the peak opacity of all four hero circle gradients to 0.08 for a more visible reduction. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`.
 - 2026-11-17 — P27 (`ui/hero-project-card`): reduced the peak opacity of the four hero circle gradients by 8%. Files: `public/hero/hero-circle-01.svg`, `public/hero/hero-circle-02.svg`, `public/hero/hero-circle-03.svg`, `public/hero/hero-circle-04.svg`.
 - 2026-11-17 — P26 (`ui/hero-project-card`): removed the extra down-left dashed SVG arm from the hero connector artwork. Files: `src/components/visuals/HeroWorkflow.tsx`.
 - 2026-11-17 — P25 (`ui/hero-project-card`): moved the Roster pill higher above the project card and extended its centered dashed SVG connector to match the Figma reference. Files: `src/components/visuals/HeroWorkflow.tsx`, `src/app/globals.css`, `docs/ui/modules/website.md`.
