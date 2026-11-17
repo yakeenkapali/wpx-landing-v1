@@ -36,26 +36,14 @@ export function Header() {
             >
               {content.solutions.label}
             </a>
-            {content.capabilityStatement.href ? (
-              <a
-                className="inline-flex items-center gap-2 text-small text-foreground hover:text-primary"
-                download
-                href={content.capabilityStatement.href}
-              >
-                {content.capabilityStatement.label}
-                <Download aria-hidden="true" size={16} strokeWidth={1.5} />
-              </a>
-            ) : (
-              <span
-                aria-disabled="true"
-                className="inline-flex items-center gap-2 text-small text-muted-fg"
-              >
-                {content.capabilityStatement.label}
-                <span className="text-caption">
-                  {content.capabilityStatement.unavailable}
-                </span>
-              </span>
-            )}
+            <a
+              className="inline-flex items-center gap-2 text-small text-foreground hover:text-primary"
+              download
+              href={content.capabilityStatement.href}
+            >
+              {content.capabilityStatement.label}
+              <Download aria-hidden="true" size={16} strokeWidth={1.5} />
+            </a>
             <Button className="min-h-11" href={content.contact.href}>
               {content.contact.label}
             </Button>

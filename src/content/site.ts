@@ -12,8 +12,7 @@ export const siteContent = {
     solutions: { label: "Solutions", href: "#solutions" },
     capabilityStatement: {
       label: "Capability Statement",
-      href: null as string | null,
-      unavailable: "PDF not yet available",
+      href: "/capability/workplanx-capability-statement.pdf",
     },
     contact: { label: "Contact us", href: "#contact" },
     login: {

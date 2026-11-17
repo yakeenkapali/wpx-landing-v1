@@ -29,22 +29,13 @@ export function Footer() {
               <a className="hover:underline" href={navigation.solutions.href}>
                 {navigation.solutions.label}
               </a>
-              {navigation.capabilityStatement.href ? (
-                <a
-                  className="hover:underline"
-                  href={navigation.capabilityStatement.href}
-                >
-                  {navigation.capabilityStatement.label}
-                </a>
-              ) : (
-                <span aria-disabled="true" className="text-on-primary/70">
-                  {navigation.capabilityStatement.label}
-                  <span className="sr-only">
-                    {" "}
-                    — {navigation.capabilityStatement.unavailable}
-                  </span>
-                </span>
-              )}
+              <a
+                className="hover:underline"
+                download
+                href={navigation.capabilityStatement.href}
+              >
+                {navigation.capabilityStatement.label}
+              </a>
               <a className="hover:underline" href={navigation.contact.href}>
                 {navigation.contact.label}
               </a>

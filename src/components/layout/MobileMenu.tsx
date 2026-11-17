@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { LoginDropdown } from "@/components/layout/LoginDropdown";
 import { siteContent } from "@/content/site";
@@ -61,27 +61,14 @@ export function MobileMenu() {
           >
             {content.solutions.label}
           </a>
-          {content.capabilityStatement.href ? (
-            <a
-              className="flex min-h-11 items-center gap-2 text-small text-foreground"
-              download
-              href={content.capabilityStatement.href}
-              onClick={closeMenu}
-            >
-              {content.capabilityStatement.label}
-              <Download aria-hidden="true" size={16} strokeWidth={1.5} />
-            </a>
-          ) : (
-            <span
-              aria-disabled="true"
-              className="flex min-h-11 items-center gap-2 text-small text-muted-fg"
-            >
-              {content.capabilityStatement.label}
-              <span className="text-caption">
-                {content.capabilityStatement.unavailable}
-              </span>
-            </span>
-          )}
+          <a
+            className="flex min-h-11 items-center gap-2 text-small text-foreground"
+            download
+            href={content.capabilityStatement.href}
+            onClick={closeMenu}
+          >
+            {content.capabilityStatement.label}
+          </a>
           <Button
             className="mt-2 w-full"
             href={content.contact.href}

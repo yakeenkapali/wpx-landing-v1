@@ -11,7 +11,7 @@ P02 establishes the initial website shell. The root layout supplies the header, 
 ## Navigation and content rules
 
 - Site copy, labels, navigation destinations, and SEO text are held in the static `siteContent` object (`src/content/site.ts:1-53`).
-- Solutions and Contact us navigate to `#solutions` and `#contact`; the capability statement and both portal destinations are null until supplied, and are shown as unavailable rather than linked (`src/content/site.ts:11-24`).
+- Solutions and Contact us navigate to `#solutions` and `#contact`; the capability statement links to the supplied PDF, while both portal destinations are null and shown as unavailable (`src/content/site.ts:11-23`).
 - The mobile navigation opens and closes with local state; Escape closes it and restores focus to the toggle (`src/components/layout/MobileMenu.tsx:9-25`). The login menu closes on blur or Escape, and unavailable portal destinations are not links (`src/components/layout/LoginDropdown.tsx:10-24`, `37-60`).
 - The current CTA section has no contact form or submission behavior (`src/components/sections/CtaBand.tsx:5-20`).
 
