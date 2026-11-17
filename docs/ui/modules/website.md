@@ -2,11 +2,11 @@
 
 Updated: 2026-11-17
 
-Screens: WorkPlanX landing page (`src/app/page.tsx`); shared site shell (`src/app/layout.tsx`).
+Screens: WorkPlanX landing page—Hero, Clients, Product & Solutions, Trust Strip, Access Points, and contact CTA (`src/app/page.tsx`); shared site shell (`src/app/layout.tsx`).
 
 ## Landing page
 
-The home page renders Hero, Trust Strip, Product & Solutions, Access Points, then the contact CTA (`src/app/page.tsx:7-15`). The shared layout sets page metadata from `siteContent.seo` and supplies the skip link, header, main landmark, and footer (`src/app/layout.tsx:10-30`). Section copy, navigation labels and destinations, SEO text, card IDs, and form messages are static in `siteContent` (`src/content/site.ts:11-126`). Illustrative screen data is held separately in `sampleData` (`src/content/sample-data.ts:1-112`).
+The home page renders Hero, Clients, Product & Solutions, Trust Strip, Access Points, then the contact CTA (`src/app/page.tsx:8-16`). Clients appears directly after Hero. It displays the trust line “Trusted by thousands of companies from startups to global enterprises” and the four existing `/clients/client-01.svg` through `/clients/client-04.svg` assets, configured in `siteContent` (`src/components/sections/ClientsSection.tsx:7-23`; `src/content/site.ts:42-50`; assets: `public/clients/client-01.svg`, `public/clients/client-02.svg`, `public/clients/client-03.svg`, `public/clients/client-04.svg`). Trust Strip now follows Product & Solutions (`src/app/page.tsx:13-14`). The shared layout sets page metadata from `siteContent.seo` and supplies the skip link, header, main landmark, and footer (`src/app/layout.tsx:10-30`). Section copy, navigation labels and destinations, SEO text, card IDs, and form messages are static in `siteContent` (`src/content/site.ts:11-136`). Illustrative screen data is held separately in `sampleData` (`src/content/sample-data.ts:1-112`).
 
 Product & Solutions renders the five configured cards by ID-to-visual mapping and adds waste management as a separate card (`src/components/sections/ProductSolutions.tsx:12-18`, `37-73`). Access Points maps its configured Admin Portal, Mobile App, and Customer Portal cards (`src/components/sections/AccessPoints.tsx:21-37`). These visuals use illustrative sample data rather than live product data; the section captions explicitly identify them as illustrative (`src/content/site.ts:31`, `47`, `87`; `src/content/sample-data.ts:1-112`).
 

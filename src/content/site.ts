@@ -39,6 +39,16 @@ export const siteContent = {
         { label: "Multi-branch workspaces", icon: "layers" },
       ],
     },
+    clients: {
+      trustLine:
+        "Trusted by thousands of companies from startups to global enterprises",
+      logos: [
+        { src: "/clients/client-01.svg", width: 300, height: 92 },
+        { src: "/clients/client-02.svg", width: 311, height: 100 },
+        { src: "/clients/client-03.svg", width: 754, height: 238 },
+        { src: "/clients/client-04.svg", width: 1806, height: 1000 },
+      ],
+    },
     solutions: {
       eyebrow: "Product & Solutions",
       heading: "One connected workflow for every project.",
