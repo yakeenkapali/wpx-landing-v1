@@ -384,8 +384,8 @@
 }
 
 .clients-section__logos img {
-  width: min(100%, 13rem);
-  height: 3rem;
+  width: min(100%, 11rem);
+  height: 2.5rem;
   object-fit: contain;
 }
 
@@ -2008,8 +2008,8 @@
   }
 
   .clients-section__logos img {
-    width: min(100%, 11rem);
-    height: 2.5rem;
+    width: min(100%, 9rem);
+    height: 2rem;
   }
 
   .hero-section {
