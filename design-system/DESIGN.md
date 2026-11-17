@@ -83,7 +83,7 @@ Breakpoints: 480, 640, 768, 900, 1024px. Validate at 375, 768, 1024 and 1440px.
 | Role | Token |
 |---|---|
 | Primary action, links, selected state, focus | `--primary` (hover: `--primary-hover`, text on it: `--on-primary`) |
-| Hero ground | `--primary` with a faint square rule and concentric line-work |
+| Hero ground | `--background` with subtle primary-tinted square rule and concentric line-work |
 | Page and card surface | `--background` |
 | Quiet section background | `--surface` |
 | Workflow showcase and diagram ground | `--surface-alt` |
