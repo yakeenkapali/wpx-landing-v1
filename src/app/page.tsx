@@ -3,6 +3,7 @@ import { ClientsSection } from "@/components/sections/ClientsSection";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Hero } from "@/components/sections/Hero";
 import { ProductSolutions } from "@/components/sections/ProductSolutions";
+import { TrustStrip } from "@/components/sections/TrustStrip";
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <Hero />
       <ClientsSection />
       <ProductSolutions />
+      <TrustStrip />
       <AccessPoints />
       <CtaBand />
     </>
