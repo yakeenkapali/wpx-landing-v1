@@ -39,19 +39,6 @@ export const sampleData = {
     crewInitials: "AM",
     active: "In progress",
   },
-  hero: {
-    customer: "Northside",
-    project: "Northside Project",
-    address: "27 Adelaide St, Brisbane City QLD 4000, Australia",
-    connected: [
-      "Field reports",
-      "Resource recovery",
-      "Payroll",
-      "Invoicing",
-      "Customer access",
-      "Roster",
-    ],
-  },
   roster: {
     days: ["Mon", "Tue", "Wed", "Thu", "Fri"],
     rows: [

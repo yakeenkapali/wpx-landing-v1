@@ -2,7 +2,7 @@ import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { siteContent } from "@/content/site";
-import { HeroWorkflow } from "@/components/visuals/HeroWorkflow";
+import { HeroOrbit } from "@/components/visuals/HeroOrbit";
 
 export function Hero() {
   return (
@@ -31,7 +31,7 @@ export function Hero() {
               </a>
             </div>
           </div>
-          <HeroWorkflow />
+          <HeroOrbit />
         </div>
       </Container>
     </section>

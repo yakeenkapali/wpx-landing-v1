@@ -1,0 +1,456 @@
+.figure {
+  min-width: 0;
+  margin: 0;
+  container-type: inline-size;
+}
+
+.stage {
+  --tilt-x: 52deg;
+  --tilt-z: -22deg;
+  --radius: 32cqw;
+  --orbit-duration: 60s;
+  --active-step: 3s;
+
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: clip;
+  container-type: inline-size;
+  perspective: 1400px;
+}
+
+.plane {
+  position: absolute;
+  inset: 0;
+  transform: rotateX(var(--tilt-x)) rotateZ(var(--tilt-z));
+  transform-style: preserve-3d;
+}
+
+.rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--radius) * 5);
+  height: calc(var(--radius) * 5);
+  overflow: visible;
+  transform: translate(-50%, -50%);
+}
+
+.stage:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.rings circle {
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1px;
+}
+
+.ringInner {
+  stroke: color-mix(in srgb, var(--primary) 22%, transparent);
+}
+
+.ringMain {
+  stroke: color-mix(in srgb, var(--primary) 42%, transparent);
+}
+
+.ringOuter,
+.ringOuterDashed,
+.ringBleed {
+  stroke: color-mix(in srgb, var(--primary) 9%, transparent);
+}
+
+.ringOuter {
+  stroke-dasharray: 48 16 8 16;
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.ringOuterDashed {
+  stroke-dasharray: 64 20 10 20;
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.stage[data-visible="true"] .ringOuter {
+  animation: ring-turn 90s linear 1500ms infinite reverse;
+}
+
+.stage[data-visible="true"] .ringOuterDashed {
+  animation: ring-turn 120s linear 1500ms infinite reverse;
+}
+
+.centerCard {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: min(44cqw, 280px);
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  box-shadow: var(--shadow-raised);
+  color: var(--foreground);
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+}
+
+.centerCheck {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--success) 10%, var(--background));
+  color: var(--success);
+}
+
+.centerEyebrow {
+  color: var(--muted-fg);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+}
+
+.centerTitle {
+  padding-right: 20px;
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  font-weight: var(--fw-semibold);
+}
+
+.centerMeta {
+  color: var(--muted-fg);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.orbitDotTrack,
+.orbit {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.stage[data-visible="true"] .orbitDotTrack {
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: orbit-spin var(--orbit-duration) linear 1500ms infinite;
+}
+
+.orbitDot {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + var(--radius));
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  transform: translate(-50%, -50%);
+}
+
+.stage[data-visible="true"] .orbit {
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: orbit-spin var(--orbit-duration) linear 1500ms infinite;
+}
+
+.connectors,
+.nodes {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform-origin: center;
+}
+
+.connectors span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--radius);
+  border-top: 1px dashed color-mix(in srgb, var(--primary) 30%, transparent);
+  transform: rotate(var(--angle));
+  transform-origin: left center;
+}
+
+.nodes li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: rotate(var(--angle)) translateX(var(--radius));
+}
+
+.counterOrbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  display: block;
+  transform-style: preserve-3d;
+  transform: rotate(calc(-1 * var(--angle)));
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.nodePosition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  transform: translate(-50%, -50%);
+}
+
+.stage[data-visible="true"] .counterOrbit {
+  animation: orbit-counter var(--orbit-duration) linear 1500ms infinite;
+}
+
+.nodeCard {
+  position: relative;
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--background);
+  box-shadow: var(--shadow-subtle);
+  color: var(--foreground);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.nodeCard::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background: color-mix(in srgb, var(--primary) 9%, var(--background));
+  content: "";
+  opacity: 0;
+}
+
+.nodeIcon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--primary) 10%, var(--background));
+  color: var(--primary);
+}
+
+.nodeLabel {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-small);
+  white-space: nowrap;
+}
+
+.stage[data-visible="true"] .rings {
+  animation: rings-in 500ms var(--ease-out) both;
+}
+
+.stage[data-visible="true"] .centerCard {
+  animation: center-in 350ms var(--ease-out) 500ms both;
+}
+
+.stage[data-visible="true"] .nodeCard {
+  animation: node-in 350ms var(--ease-out)
+    calc(850ms + var(--node-index) * 60ms) both;
+}
+
+.stage[data-visible="true"] .nodeCard::before {
+  animation: node-highlight calc(var(--active-step) * 5) linear infinite;
+  animation-delay: calc(1500ms + var(--node-index) * var(--active-step));
+}
+
+.stage[data-visible="true"]
+  :is(
+    .rings,
+    .ringOuter,
+    .ringOuterDashed,
+    .centerCard,
+    .orbit,
+    .orbitDotTrack,
+    .counterOrbit,
+    .nodeCard,
+    .nodeCard::before
+  ) {
+  animation-play-state: paused;
+}
+
+.stage[data-visible="true"][data-active="true"]
+  :is(
+    .rings,
+    .ringOuter,
+    .ringOuterDashed,
+    .centerCard,
+    .orbit,
+    .orbitDotTrack,
+    .counterOrbit,
+    .nodeCard,
+    .nodeCard::before
+  ) {
+  animation-play-state: running;
+}
+
+.stage[data-visible="true"][data-active="true"]:is(:hover, :focus-within)
+  :is(
+    .rings,
+    .ringOuter,
+    .ringOuterDashed,
+    .centerCard,
+    .orbit,
+    .orbitDotTrack,
+    .counterOrbit,
+    .nodeCard,
+    .nodeCard::before
+  ) {
+  animation-play-state: paused;
+}
+
+.description {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.caption {
+  margin-top: var(--space-2);
+  color: var(--muted-fg);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  text-align: right;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .stage {
+    --radius: 26cqw;
+  }
+
+  .nodeCard {
+    max-width: 8rem;
+  }
+
+  .nodeLabel {
+    white-space: normal;
+  }
+}
+
+@keyframes ring-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-counter {
+  from {
+    transform: rotate(calc(-1 * var(--angle)));
+  }
+  to {
+    transform: rotate(calc(-1 * var(--angle) - 360deg));
+  }
+}
+
+@keyframes rings-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.94);
+  }
+}
+
+@keyframes center-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 8px));
+  }
+}
+
+@keyframes node-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+}
+
+@keyframes node-highlight {
+  0%,
+  19.99% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .stage {
+    --tilt-x: 45deg;
+    --radius: 20cqw;
+  }
+
+  .centerCard {
+    width: min(44cqw, 220px);
+    padding: var(--space-3);
+  }
+
+  .centerCheck {
+    top: var(--space-3);
+    right: var(--space-3);
+  }
+
+  .centerTitle {
+    font-size: var(--fs-subtitle);
+    line-height: var(--lh-subtitle);
+  }
+
+  .nodeCard {
+    max-width: 7rem;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .nodeIcon {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .nodeLabel {
+    white-space: normal;
+  }
+}
